@@ -1,0 +1,92 @@
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F5F5F5;
+}
+
+.propertyTitle {
+  font-size: 24px;
+  @media (max-width: 767px) {
+    font-size: 18px;
+  }
+}
+
+.innerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 800px;
+  gap: 20px;
+  padding: 10px;
+}
+
+
+.detailSectionContainer {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  gap: 20px;
+
+    @media (max-width: 767px) {
+    flex-direction: column;
+    }
+}
+
+.detailsLeft{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  p {
+    color: rgb(113, 113, 113);
+  }
+}
+
+.detailsRight{
+  flex: 1;
+}
+
+.detailSectionPoperty {
+  grid-area: detailSectionPoperty;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  p {
+    color: rgb(113, 113, 113);
+  }
+}
+
+.detailSectionSellerDesctipion {
+  grid-area: detailSectionSellerDesctipion;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  p {
+    line-height: 24px;
+    font-weight: 400;
+    color: rgb(113, 113, 113);
+    font-size: 16px;
+    line-break: strict;
+  }
+}
+
+.detailSectionSeller {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  grid-area: detailSectionSeller;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  padding: 20px;
+  border-radius: 10px;
+  p {
+    color: rgb(113, 113, 113);
+  }
+}
+

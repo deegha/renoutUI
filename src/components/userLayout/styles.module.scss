@@ -1,0 +1,22 @@
+.contentContainer {
+  width: 100%;
+  padding: 0 0 100px 0;
+}
+
+
+.navBarContianer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.navBarWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  // background-color: #f1f2f6;
+  margin-bottom: 20px;
+}

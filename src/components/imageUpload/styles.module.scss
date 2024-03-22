@@ -1,0 +1,126 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+  flex-wrap: wrap;
+
+  .upload {
+    cursor: pointer !important;
+    width: 150px;
+    height: 150px;
+    border: 1px solid #f1f2f6;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .box {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        transition: all 0.5 linear;
+        width: 50px;
+        height: 50px;
+        color: #718093;
+      }
+    }
+
+    input {
+      font-size: 200px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    flex-direction: column;
+    gap: 10px;
+    .helperText {
+      padding: 10px;
+      font-size: 9px;
+      text-align: center;
+      color: #6f7171;
+    }
+  }
+
+  .dragging {
+    box-shadow: 4px 4px 3px 0px rgba(0, 0, 0, 0.4);
+
+    .box {
+      svg {
+        transition: all 0.5 linear;
+        width: 70px;
+        height: 70px;
+      }
+    }
+  }
+
+  .imageContainer {
+    width: 150px;
+    height: 150px;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+    border-radius: 10px;
+    padding: 10px;
+
+    img {
+      border-radius: 10px;
+    }
+
+    .imageHolder {
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 150px;
+    height: 150px;
+      animation: activate 1.2s ease;
+      border-radius: 10px;
+      color: #718093;
+    }
+  }
+}
+
+.hoverButton {
+  border: none;
+  border-radius: 50px;
+  opacity: 0.7;
+  cursor: pointer;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background-color: #373c47;
+  color: #fff;
+  
+
+  svg {
+    width: 50px;
+    height: 50px;
+    color: #131414;
+  }
+}
+
+@keyframes activate {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    transform: 1;
+  }
+}

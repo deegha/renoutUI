@@ -1,0 +1,43 @@
+
+
+.container {
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+
+  h1 {
+    margin-bottom: 50px;;
+  }
+
+}
+
+.amenities {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  max-width: 500px;
+}
+
+.editorContainer{
+  border: 1px solid #f1f2f6;
+  padding: 11px 20px;
+  max-width: 800px;
+}
+
+.propertyDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.createbtn {
+  width: 200px;
+  display: flex;
+}
+
+.imageUploadArea {
+  max-width: 800px;
+}

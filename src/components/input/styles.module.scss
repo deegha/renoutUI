@@ -1,0 +1,68 @@
+.holder {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .label {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    span {
+      color: #e74c3c;
+      font-size: 15px;
+    }
+  }
+  .container {
+    border-radius: 8px;
+    border: 1px solid #f1f2f6;
+    padding: 11px 14px;
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 100%;
+
+      border: none;
+      color: #2d2f33;
+      outline: none;
+      font-size: 12px;
+
+      svg {
+        cursor: pointer;
+      }
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type='number'] {
+      -moz-appearance: textfield;
+    }
+  }
+}
+
+.errorContainer {
+  height: 10px;
+  position: relative;
+  top: -10px;
+  span {
+    font-size: 10px;
+    color: #e74c3c;
+    animation: animateError 1s ease-in;
+  }
+}
+
+@keyframes animateError {
+  from {
+    transform: translate(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0);
+    opacity: 1;
+  }
+}

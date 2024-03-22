@@ -1,0 +1,36 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.paginationItem {
+  display: inline-block;
+  padding: 8px;
+  margin: 0 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  
+  text-decoration: none;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+}
+
+.paginationItemActive {
+  composes: paginationItem;
+  background-color: #ccc;
+  color: #fff;
+}
+
+.pagination-item.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pagination-item.disabled:hover {
+  background-color: transparent;
+}

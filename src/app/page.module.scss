@@ -1,0 +1,27 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+  gap: 20px;
+  min-height: 100vh;
+  position: relative;
+  background-color: #F5F5F5;
+  
+}
+
+.filterContainer {
+  padding: 100px 60px;
+  background: url("https://res.cloudinary.com/duqpgdc9v/image/upload/w_750/v1707906318/rentouts/rentoutbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  h1 {
+    color: #F5F5F5;
+    font-size: 60px;
+    max-width: 450px;
+  }
+}

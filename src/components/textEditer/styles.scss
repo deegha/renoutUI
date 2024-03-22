@@ -1,0 +1,36 @@
+/* Basic editor styles */
+.tiptap {
+  > * + * {
+    margin-top: 0.75em;
+  }
+}
+
+/* Placeholder (at the top) */
+.tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #ced4da;
+  pointer-events: none;
+  height: 0;
+}
+
+/* Placeholder (on every new line) */
+.tiptap .is-empty::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #ced4da;
+  pointer-events: none;
+  height: 0;
+}
+
+.editor-container {
+  width: 400px;
+  border-radius: 8px;
+    border: 1px solid #f1f2f6;
+    padding: 11px 20px;
+
+
+    input[type='number'] {
+      -moz-appearance: textfield;
+    }
+}

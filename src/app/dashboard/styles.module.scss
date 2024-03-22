@@ -1,0 +1,60 @@
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  
+}
+
+.innerContainer {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+
+
+  @media only screen and (max-width: 800px) {
+    width: 100%;
+    align-items: center;
+    padding: 0 5px;
+    
+  }
+}
+
+.inputBlock {
+  max-width: 402px; 
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+
+  h2 {
+    margin: 0;
+  }
+
+  @media only screen and (max-width: 800px) {
+    width:calc(100% - 10px) ;
+    
+  }
+}
+
+.helperText {
+  color: var(--gray1);
+  font-size: 12px;
+}
+
+.selectionsContainer {
+  display: flex;
+  gap: 15px;
+
+  @media only screen and (max-width: 800px) {
+   flex-direction: column;  
+  }
+}
+
+
+.dashboard {
+  height: 100hv;
+  position: relative;
+  left: 200px;
+}

@@ -1,0 +1,28 @@
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+
+  background-color: transparent;
+  border: 1px solid #f1f2f6;
+  border-radius: 8px;
+  color: #a6a7a9;
+  padding: 10px;
+
+  &:hover {
+    background-color: #f1f2f6;
+    color: #000;
+  }
+}
+
+.checkboxContainerSelected {
+  composes: checkboxContainer;
+  background-color: #434a4a;
+  color: #ffffff;
+
+  &:hover {
+    background-color: #434a4a;
+    color: #ffffff;
+  }
+}

@@ -1,0 +1,48 @@
+.mainButton {
+  // Remove outlines and shades
+  outline: none;
+  box-shadow: none;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  // Add click effect
+  &:active {
+    transform: translateY(1px);
+  }
+
+}
+
+.primary {
+  @extend .mainButton;
+  background-color: #3EBAB3;
+  color: #fff;
+
+  &:active {    
+    background-color: #42afa9;
+  }
+
+  &:focus, &:hover {
+    background-color: #6bc2be;
+  }
+  
+  &:disabled {
+    background-color: #f0f0f0;
+    color: #ccc;
+    cursor: not-allowed;
+  }
+}
+
+.secondary {
+  @extend .mainButton;
+  background-color: #000;
+}
+
+.info {
+  @extend .mainButton;
+  // Additional styles for button3
+}

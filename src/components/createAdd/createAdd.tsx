@@ -3,11 +3,11 @@
 import { AutoComplete, Button, CheckBox, ImageUpload } from '@/components';
 import { IImage } from '@/components/imageUpload/imageUpload';
 import styles from './styles.module.scss';
-import { Editor } from 'react-draft-wysiwyg';
-import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+// import { Editor } from 'react-draft-wysiwyg';
+// import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import { sectionOneItems, sectionTwoItems } from './staticContent';
 import { useCreateForm } from './hooks/useCreateForm';
-import { useEditor } from './hooks/useEditor';
+// import { useEditor } from './hooks/useEditor';
 import { useFormImages } from './hooks/useFormImages';
 import { TInputs, useInputs } from './hooks/useInputs';
 import { InputBlock } from './inputBlocks';
@@ -26,17 +26,11 @@ export const CreateAddUI = () => {
     setLocation,
     location,
   } = useInputs();
-  const { editorState, onEditorStateChange } = useEditor();
+  // const { editorState } = useEditor();
   const { handleCreateProperty, loading } = useCreateForm();
 
   function handleSubmit() {
-    handleCreateProperty(
-      inputs,
-      amenities,
-      images,
-      editorState.getCurrentContent().getPlainText(),
-      location?.id as number,
-    );
+    handleCreateProperty(inputs, amenities, images, '', location?.id as number);
   }
 
   const isFormNotReady =
@@ -47,8 +41,6 @@ export const CreateAddUI = () => {
     inputs.contactPerson === '' ||
     inputs.numOfBathrooms === 0 ||
     images.length === 0;
-
-  console.log(isFormNotReady, 'isFormReady');
 
   return (
     <div className={styles.container} data-testid={'create-add'}>
@@ -111,18 +103,18 @@ export const CreateAddUI = () => {
           inputType={item.inputType as TType}
         />
       ))}
-      <div className={styles.propertyDescription}>
+      {/* <div className={styles.propertyDescription}>
         <span>Property Description</span>
         <div className={styles.editorContainer}>
-          <Editor
+           <Editor
             editorState={editorState}
             toolbarClassName="toolbarClassName"
             wrapperClassName="wrapperClassName"
             editorClassName="editorClassName"
             onEditorStateChange={onEditorStateChange}
-          />
+          /> 
         </div>
-      </div>
+      </div> */}
 
       <div className={styles.createbtn}>
         <Button

@@ -1,3 +1,4 @@
+'use client';
 import { InputText } from '..';
 import styles from './styles.module.scss';
 import { memo } from 'react';

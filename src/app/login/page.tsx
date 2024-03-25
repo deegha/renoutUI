@@ -1,76 +1,76 @@
-"use client";
-import React, { useState } from "react";
-import Link from "next/link";
-import styles from "./styes.module.scss";
-import { Button } from "@/components";
-import { login } from "@/services/authenticationService";
-import { useRouter } from "next/navigation";
+'use client';
+import React, { useState } from 'react';
+import Link from 'next/link';
+import styles from './styes.module.scss';
+import { Button } from '@/components';
+import { login } from '@/services/authenticationService';
+import { useRouter } from 'next/navigation';
 
 const Login = () => {
   const router = useRouter();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [status, setStatus] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [status, setStatus] = useState('');
 
   const handleLogin = async (e: React.SyntheticEvent) => {
     e.preventDefault();
-    setStatus("Login in...");
+    setStatus('Login in...');
     const response = await login(email, password);
-    console.log(response, "response");
+    console.log(response, 'response');
     if (!response.success) {
-      setStatus("");
+      setStatus('');
       setError(response.message);
       clearError();
       return;
     }
 
-    setStatus("Redirecting...");
-    router.push("/dashboard");
+    setStatus('Redirecting...');
+    router.push('/dashboard');
   };
 
   function clearError() {
     setTimeout(() => {
-      setError("");
+      setError('');
     }, 3000);
   }
 
   return (
-    <div className={styles["register-container"]}>
+    <div className={styles['register-container']}>
       <h2>Login</h2>
-      <form className={styles["register-form"]}>
-        <div className={styles["form-group"]}>
+      <form className={styles['register-form']}>
+        <div className={styles['form-group']}>
           <label>Email:</label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className={styles["form-control"]}
+            className={styles['form-control']}
           />
         </div>
-        <div className={styles["form-group"]}>
+        <div className={styles['form-group']}>
           <label>Password:</label>
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className={styles["form-control"]}
+            className={styles['form-control']}
           />
         </div>
         <Button
           variant="primary"
           onClick={handleLogin}
-          loading={status === "Login in..."}
-          title={status === "" ? "Log in" : status}
+          loading={status === 'Login in...'}
+          title={status === '' ? 'Log in' : status}
         />
       </form>
 
-      <div className={styles["links-container"]}>
+      <div className={styles['links-container']}>
         <Link href="/register">Create an account</Link>
         <Link href="/">Go to Home</Link>
       </div>
 
-      {error && <span className={styles["error"]}>{error}</span>}
+      {error && <span className={styles['error']}>{error}</span>}
     </div>
   );
 };

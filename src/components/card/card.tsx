@@ -1,7 +1,7 @@
-import React, { Suspense } from "react";
-import styles from "./styles.module.scss";
-import { ImagesRenderer } from "./image";
-import Link from "next/link";
+import React, { Suspense } from 'react';
+import styles from './styles.module.scss';
+import { ImagesRenderer } from './image';
+import Link from 'next/link';
 
 interface CardProps {
   id: string;
@@ -18,7 +18,7 @@ export const Card: React.FC<CardProps> = async ({
   items,
   id,
   advanceAmount,
-  securityDeposit,
+  securityDeposit
 }) => {
   return (
     <Link className={styles.cardContainer} href={`/${id}`}>
@@ -30,16 +30,16 @@ export const Card: React.FC<CardProps> = async ({
       <div className={styles.cardDescription}>
         <h2 className={styles.cardTitle}>{title}</h2>
         <div className={styles.pricing}>
-          <span>Price per month : {rentAmount.toLocaleString("en-US")}</span>
+          <span>Price per month : {rentAmount.toLocaleString('en-US')}</span>
           {advanceAmount > 1 && (
             <span>
-              Advance amount : {advanceAmount.toLocaleString("en-US")}
+              Advance amount : {advanceAmount.toLocaleString('en-US')}
             </span>
           )}
 
           {securityDeposit > 1 && (
             <span>
-              Security deposite : {securityDeposit.toLocaleString("en-US")}
+              Security deposite : {securityDeposit.toLocaleString('en-US')}
             </span>
           )}
         </div>

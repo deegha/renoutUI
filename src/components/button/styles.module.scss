@@ -14,22 +14,22 @@
   &:active {
     transform: translateY(1px);
   }
-
 }
 
 .primary {
   @extend .mainButton;
-  background-color: #3EBAB3;
+  background-color: #3ebab3;
   color: #fff;
 
-  &:active {    
+  &:active {
     background-color: #42afa9;
   }
 
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
     background-color: #6bc2be;
   }
-  
+
   &:disabled {
     background-color: #f0f0f0;
     color: #ccc;

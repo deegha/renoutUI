@@ -26,11 +26,10 @@
 .editor-container {
   width: 400px;
   border-radius: 8px;
-    border: 1px solid #f1f2f6;
-    padding: 11px 20px;
+  border: 1px solid #f1f2f6;
+  padding: 11px 20px;
 
-
-    input[type='number'] {
-      -moz-appearance: textfield;
-    }
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
 }

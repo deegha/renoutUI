@@ -1,8 +1,8 @@
-"use server";
-import { fetchProperties } from "@/services/propertyService";
-import { Card, Filters, Pagination } from "@/components";
-import styles from "./styles.module.scss";
-import { FetchProductsResponse } from "@/services/d";
+'use server';
+import { fetchProperties } from '@/services/propertyService';
+import { Card, Filters, Pagination } from '@/components';
+import styles from './styles.module.scss';
+import { FetchProductsResponse } from '@/services/d';
 
 interface IProps {
   page?: string;
@@ -19,24 +19,24 @@ export async function ProductsList({
   region,
   bedrooms,
   furnished,
-  gym,
+  gym
 }: IProps) {
   let productResponse: FetchProductsResponse;
 
   let pageError = false;
   try {
     productResponse = await fetchProperties({
-      page: page || "",
-      maxRent: rentAmount || "",
-      beds: bedrooms || "",
-      furnished: furnished ? 1 : "",
+      page: page || '',
+      maxRent: rentAmount || '',
+      beds: bedrooms || '',
+      furnished: furnished ? 1 : '',
       region: region,
-      gym: gym,
+      gym: gym
     });
   } catch (error) {
     productResponse = {
       products: [],
-      numberOfPages: 0,
+      numberOfPages: 0
     };
     pageError = true;
   }
@@ -55,11 +55,11 @@ export async function ProductsList({
       {productResponse.products.map((product) => {
         const perks: Array<string> = [];
         perks.push(
-          product.numOfBedrooms + " Bedrooms",
-          product.numOfBathrooms + " Bathrooms",
-          product.furnishedStatus ? "Furnished" : "Not Furnished",
-          product.gym ? "Gym" : "",
-          product.pool ? "Pool" : ""
+          product.numOfBedrooms + ' Bedrooms',
+          product.numOfBathrooms + ' Bathrooms',
+          product.furnishedStatus ? 'Furnished' : 'Not Furnished',
+          product.gym ? 'Gym' : '',
+          product.pool ? 'Pool' : ''
         );
         return (
           <Card

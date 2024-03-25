@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { AutoComplete, Button, CheckBox } from "@/components";
-import styles from "./styles.module.scss";
-import { IOption } from "@/components/autoComplete/autoComplete";
-import { bedrooms, priceRange } from "@/services/filterOptions";
+import { AutoComplete, Button, CheckBox } from '@/components';
+import styles from './styles.module.scss';
+import { IOption } from '@/components/autoComplete/autoComplete';
+import { bedrooms, priceRange } from '@/services/filterOptions';
 
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useFilter } from "./useFilter";
-import { useInitialFilterOptions } from "./useInitialFilterOptions";
-import { locations } from "@/services/locations";
-import { useMobileFilterState } from "./useMobileFilterState";
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useFilter } from './useFilter';
+import { useInitialFilterOptions } from './useInitialFilterOptions';
+import { locations } from '@/services/locations';
+import { useMobileFilterState } from './useMobileFilterState';
 
 interface IProps {
   alwayOpen?: boolean;
@@ -30,14 +30,14 @@ export function Filters({ alwayOpen }: IProps) {
     setGym,
     setSelectedSelectedNumberOfBedrooms,
     selectedNumberOfBedrooms,
-    handleSearch,
+    handleSearch
   } = useFilter({
     selectedRegionState: initialFilterOptions.selectedRegion,
     selectedPriceRangeState: initialFilterOptions.selectedPriceRangeState,
     furnishedState: initialFilterOptions.furnishedState,
     gymState: initialFilterOptions.gymState,
     selectedNumberOfBedroomsState:
-      initialFilterOptions.selectedNumberOfBedroomsState,
+      initialFilterOptions.selectedNumberOfBedroomsState
   });
 
   function handleSubmit() {
@@ -52,7 +52,7 @@ export function Filters({ alwayOpen }: IProps) {
           <Button
             variant="info"
             title={
-              mobileFilterState.isFilterOpen ? "Hide Filters" : "Show Filters"
+              mobileFilterState.isFilterOpen ? 'Hide Filters' : 'Show Filters'
             }
             onClick={mobileFilterState.toggleFilter}
           />

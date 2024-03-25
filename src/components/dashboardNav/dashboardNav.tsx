@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
-import { logout } from "@/services/authenticationService";
+import { logout } from '@/services/authenticationService';
 
-import styles from "./styles.module.scss";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { faBars, faPowerOff } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import styles from './styles.module.scss';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { faBars, faPowerOff } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useState } from 'react';
 
 const links = [
   {
-    url: "/dashboard",
-    name: "Create Adds",
-  },
+    url: '/dashboard',
+    name: 'Create Adds'
+  }
 ];
 
 export function DashBoardNav() {
@@ -35,7 +35,7 @@ export function DashBoardNav() {
           <ul className={styles.links}>
             {links.map((link) => (
               <Link href={link.url} key={link.url}>
-                <li className={pathname === link.url ? styles.selected : ""}>
+                <li className={pathname === link.url ? styles.selected : ''}>
                   {link.name}
                 </li>
               </Link>

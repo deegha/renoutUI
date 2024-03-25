@@ -1,10 +1,10 @@
-"use client";
-import { useState } from "react";
-import styles from "./styles.module.scss";
-import { faCamera, faClose } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import useAlert from "@/hooks/useAlert";
-import { memo } from "react";
+'use client';
+import { useState } from 'react';
+import styles from './styles.module.scss';
+import { faCamera, faClose } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import useAlert from '@/hooks/useAlert';
+import { memo } from 'react';
 
 export interface IImage {
   url: string;
@@ -20,14 +20,14 @@ export interface IProps {
 export const ImageUpload = memo(function ImageUpload({
   onChangeImage,
   selectedImages,
-  removeImage,
+  removeImage
 }: IProps) {
   const [isHovered, setIsHovered] = useState(false);
   const { createNotification } = useAlert();
   const [isDragging, setIsDragging] = useState(false);
 
   const isValidImageType = (file: File): boolean => {
-    const allowedTypes = ["image/jpeg", "image/png"];
+    const allowedTypes = ['image/jpeg', 'image/png'];
     return allowedTypes.includes(file.type);
   };
 
@@ -40,20 +40,20 @@ export const ImageUpload = memo(function ImageUpload({
         if (isValidImageType(currentFile)) {
           if (currentFile.size > MAX_FILE_SIZE) {
             createNotification({
-              type: "error",
-              message: `The file ${currentFile.name} is too large.`,
+              type: 'error',
+              message: `The file ${currentFile.name} is too large.`
             });
 
-            throw new Error("File too large to handle");
+            throw new Error('File too large to handle');
           }
           return {
             url: URL.createObjectURL(currentFile),
-            file: currentFile,
+            file: currentFile
           };
         }
         createNotification({
-          type: "error",
-          message: `You entered an invalid file type:${currentFile.type}`,
+          type: 'error',
+          message: `You entered an invalid file type:${currentFile.type}`
         });
       });
 
@@ -63,8 +63,8 @@ export const ImageUpload = memo(function ImageUpload({
     } catch (err) {
       console.log(err);
       createNotification({
-        type: "error",
-        message: `Something went wrong`,
+        type: 'error',
+        message: `Something went wrong`
       });
     }
   };
@@ -73,7 +73,7 @@ export const ImageUpload = memo(function ImageUpload({
     <div className={styles.container} data-testid="image-upload">
       {selectedImages.length < 6 && (
         <div
-          className={`${styles.upload} ${isDragging ? styles.dragging : ""}`}
+          className={`${styles.upload} ${isDragging ? styles.dragging : ''}`}
           onDragOver={(e) => {
             e.preventDefault();
             setIsDragging(true);
@@ -88,7 +88,7 @@ export const ImageUpload = memo(function ImageUpload({
           }}
         >
           <input
-            type={"file"}
+            type={'file'}
             onChange={(e) => addImage(e.target.files as FileList)}
             accept="image/*"
             data-testid="image-upload-input"

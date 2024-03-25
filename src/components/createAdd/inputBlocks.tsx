@@ -1,10 +1,10 @@
-import { InputText } from "..";
-import styles from "./styles.module.scss";
-import { memo } from "react";
-import { TType } from "@/components/input/input";
+import { InputText } from '..';
+import styles from './styles.module.scss';
+import { memo } from 'react';
+import { TType } from '@/components/input/input';
 
 interface BlockProps {
-  type: "text" | "number";
+  type: 'text' | 'number';
   required: boolean;
   title: string;
   placeHolder: string;
@@ -16,7 +16,7 @@ interface BlockProps {
   handler: (
     name: string,
     value: string | number,
-    type: "text" | "number"
+    type: 'text' | 'number'
   ) => void;
 }
 
@@ -30,7 +30,7 @@ export const InputBlock: React.FC<BlockProps> = memo(
     inputType,
     value,
     loading,
-    required,
+    required
   }) => {
     return (
       <div className={styles.inputBlock} title={title}>
@@ -40,7 +40,7 @@ export const InputBlock: React.FC<BlockProps> = memo(
           value={value}
           testId="input-block"
           label={title}
-          type={inputType ? inputType : "text"}
+          type={inputType ? inputType : 'text'}
           name={name}
           placeholder={placeHolder}
           onChange={(name: string, value: string | number) =>

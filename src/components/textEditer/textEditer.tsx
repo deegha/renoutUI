@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import React, { useState, useMemo, useCallback } from "react";
-import { Descendant, createEditor } from "slate";
-import { Slate, Editable, withReact } from "slate-react";
+import React, { useState, useMemo, useCallback } from 'react';
+import { Descendant, createEditor } from 'slate';
+import { Slate, Editable, withReact } from 'slate-react';
 
 export const TextEditor = () => {
   const editor = useMemo(() => withReact(createEditor()), []);
   const [value, setValue] = useState<Descendant[]>([
     {
-      type: "paragraph",
-      children: [{ text: "Enter your text here" }],
-    },
+      type: 'paragraph',
+      children: [{ text: 'Enter your text here' }]
+    }
   ]);
 
   const handleChange = useCallback((newValue: Descendant[]) => {
@@ -25,9 +25,9 @@ export const TextEditor = () => {
   return (
     <div>
       <div className="toolbar">
-        <button onClick={() => handleFormat("bold")}>Bold</button>
-        <button onClick={() => handleFormat("italic")}>Italic</button>
-        <button onClick={() => handleFormat("underline")}>Underline</button>
+        <button onClick={() => handleFormat('bold')}>Bold</button>
+        <button onClick={() => handleFormat('italic')}>Italic</button>
+        <button onClick={() => handleFormat('underline')}>Underline</button>
       </div>
       <Slate editor={editor} initialValue={value} onChange={handleChange}>
         <Editable />

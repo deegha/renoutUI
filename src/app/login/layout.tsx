@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { getUser } from "@/services/authenticationService";
-import { useEffect, useState } from "react";
-import { User } from "@/services/d";
-import { useRouter } from "next/navigation";
-import { AuthProvider, useAuth } from "@/context/authContenxt";
+import { getUser } from '@/services/authenticationService';
+import { useEffect, useState } from 'react';
+import { User } from '@/services/d';
+import { useRouter } from 'next/navigation';
+import { AuthProvider, useAuth } from '@/context/authContenxt';
 
 export default function LoginLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
@@ -19,7 +19,7 @@ export default function LoginLayout({
 }
 
 function LoginRender({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
@@ -27,7 +27,7 @@ function LoginRender({
   const { loading, user } = useAuth();
   if (loading) return <div>loading</div>;
 
-  if (user) router.push("/dashboard");
+  if (user) router.push('/dashboard');
 
   return <>{children}</>;
 }

@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import styles from "./pagination.module.scss";
-import Link from "next/link";
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import styles from './pagination.module.scss';
+import Link from 'next/link';
+import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 
 interface PaginationProps {
   totalPages: number;
@@ -11,7 +11,7 @@ interface PaginationProps {
 
 export const Pagination: React.FC<PaginationProps> = ({
   totalPages,
-  selectedPage,
+  selectedPage
 }) => {
   const path = useSearchParams();
 
@@ -20,7 +20,7 @@ export const Pagination: React.FC<PaginationProps> = ({
       {Array.from({ length: totalPages }, (_, index) => index + 1).map(
         (pageNumber) => {
           const queryParams = new URLSearchParams(path);
-          queryParams.set("page", String(pageNumber));
+          queryParams.set('page', String(pageNumber));
           const queryString = queryParams.toString();
 
           return (

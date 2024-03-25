@@ -1,5 +1,3 @@
-
-
 .container {
   padding: 10px;
   display: flex;
@@ -13,15 +11,15 @@
     display: none;
     position: absolute;
     z-index: 1;
-   }
-  
+  }
+
   a {
     text-decoration: none;
     color: #bdc3c7;
   }
 
   background-color: #574b90;
-  
+
   padding: 40px 20px;
 
   .containerInner {
@@ -29,7 +27,6 @@
     flex-direction: column;
     gap: 20px;
     justify-content: center;
-    
   }
 
   ul {
@@ -59,15 +56,12 @@
   }
 }
 
-
-
 .logoutBtn {
   cursor: pointer;
   color: #bdc3c7;
 
   &:hover {
     color: #e66767;
-    
   }
 }
 
@@ -79,16 +73,15 @@
 }
 
 .containerMain {
- 
   @media only screen and (max-width: 800px) {
     padding: 10px;
     width: 100%;
-   }
+  }
 }
 
 .mobileMenu {
   display: none;
-  
+
   @media only screen and (max-width: 800px) {
     display: block;
     position: relative;
@@ -97,18 +90,17 @@
     display: flex;
     justify-content: flex-end;
     cursor: pointer;
-   }
+  }
 }
 
 .mobileContainer {
-  
   a {
     text-decoration: none;
     color: #bdc3c7;
   }
 
   background-color: #574b90;
-  
+
   padding: 40px 40px;
 
   .containerInner {
@@ -116,7 +108,6 @@
     flex-direction: column;
     gap: 20px;
     justify-content: center;
-    
   }
 
   ul {
@@ -151,13 +142,12 @@
   gap: 10px;
   justify-content: space-between;
   min-height: 100vh;
-  
+
   position: fixed;
   left: 0;
   top: 0;
   height: 100vh;
   z-index: 2;
-
 
   display: flex;
 }

@@ -1,5 +1,5 @@
-import { ICreateProperty } from "@/services/d";
-import { useState } from "react";
+import { ICreateProperty } from '@/services/d';
+import { useState } from 'react';
 
 export type TAmenities = {
   pool: boolean;
@@ -32,21 +32,21 @@ export function useInputs() {
     pool: false,
     gym: false,
     generators: false,
-    furnished: false,
+    furnished: false
   });
   const [inputs, setInputs] = useState<TInputs>({
-    title: "",
-    rentAmount: "",
+    title: '',
+    rentAmount: '',
     numOfBedrooms: 0,
     numOfBathrooms: 0,
     floorArea: 0,
-    description: "",
-    advancePayment: "",
-    securityDeposit: "",
+    description: '',
+    advancePayment: '',
+    securityDeposit: '',
     productCategory: 0,
     status: 0,
-    contactNumber: "",
-    contactPerson: "",
+    contactNumber: '',
+    contactPerson: ''
   });
 
   const [location, setLocation] = useState<TLocation>({} as TLocation);
@@ -56,7 +56,7 @@ export function useInputs() {
     console.log(name, value);
     setInputs((prevInputs: TInputs) => ({
       ...prevInputs,
-      [name]: value,
+      [name]: value
     }));
   };
 
@@ -64,7 +64,7 @@ export function useInputs() {
   const handleCheckBoxes = (key: string, change: boolean) => {
     setAmanitues((prevAmenities) => ({
       ...prevAmenities,
-      [key]: change,
+      [key]: change
     }));
   };
 
@@ -74,6 +74,6 @@ export function useInputs() {
     handleCheckBoxes,
     amenities,
     setLocation,
-    location,
+    location
   };
 }

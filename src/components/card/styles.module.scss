@@ -1,7 +1,5 @@
-
-
 .cardContainer {
-  display:  flex;
+  display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
@@ -40,9 +38,9 @@
       display: flex;
       color: #84817a;
       gap: 20px;
-      font-size:12px;
+      font-size: 12px;
     }
-  
+
     .cardDescription {
       font-size: 1rem;
       color: var(--color-text);
@@ -53,15 +51,14 @@
       display: flex;
       gap: 10px;
       font-size: 12px;
-      color:#d1ccc0;
+      color: #d1ccc0;
       flex-wrap: wrap;
     }
   }
 
-  @media screen and (max-width: 767px){
+  @media screen and (max-width: 767px) {
     flex-direction: column;
     gap: 10px;
     align-items: flex-start;
   }
 }
-

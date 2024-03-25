@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import styles from "./styles.module.scss";
-import { Switch } from "@headlessui/react";
+import styles from './styles.module.scss';
+import { Switch } from '@headlessui/react';
 
 interface ICheckBox {
   label: string;
@@ -16,7 +16,7 @@ export function CheckBox({
   isChecked,
   onChange,
   name,
-  testId,
+  testId
 }: ICheckBox) {
   return (
     <Switch

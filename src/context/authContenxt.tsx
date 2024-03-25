@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import React, { useContext, useState, useEffect } from "react";
-import { login as loginAction } from "@/services/authenticationService";
-import { User } from "@/services/d";
-import { getUser } from "@/services/authenticationService";
+import React, { useContext, useState, useEffect } from 'react';
+import { login as loginAction } from '@/services/authenticationService';
+import { User } from '@/services/d';
+import { getUser } from '@/services/authenticationService';
 
 interface IAuthContext {
-  authenticated: boolean | "loading";
+  authenticated: boolean | 'loading';
   loading: boolean;
   user: User | null;
   logout: () => void;
@@ -26,7 +26,7 @@ const authContextDefaultValues: IAuthContext = {
   },
   login: () => {
     return false;
-  },
+  }
 };
 
 const AuthContext = React.createContext(authContextDefaultValues);
@@ -36,8 +36,8 @@ export const useAuth = () => {
 };
 
 export const AuthProvider: React.FC<IProps> = ({ children }) => {
-  const [authenticated, setAuthenticated] = useState<boolean | "loading">(
-    "loading"
+  const [authenticated, setAuthenticated] = useState<boolean | 'loading'>(
+    'loading'
   );
   const [loading, setLoading] = useState<boolean>(false);
   const [user, setUser] = useState<User | null>(null);
@@ -84,7 +84,7 @@ export const AuthProvider: React.FC<IProps> = ({ children }) => {
     user,
     logout,
     login,
-    setAuthUser,
+    setAuthUser
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

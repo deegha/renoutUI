@@ -1,9 +1,9 @@
-import styles from "./styles.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import React from "react";
+import styles from './styles.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import React from 'react';
 
-export type TType = "text" | "number" | "email" | "currency" | "date";
+export type TType = 'text' | 'number' | 'email' | 'currency' | 'date';
 interface IInput {
   value?: string | number;
   onChange?: (name: string, value: string | number) => void;
@@ -24,11 +24,11 @@ interface IInput {
 }
 
 const typeMap = {
-  text: "text",
-  number: "number",
-  email: "email",
-  currency: "string",
-  date: "string",
+  text: 'text',
+  number: 'number',
+  email: 'email',
+  currency: 'string',
+  date: 'string'
 };
 
 export function InputText({
@@ -43,38 +43,38 @@ export function InputText({
   placeholder,
   error,
   testId,
-  loading,
+  loading
 }: IInput) {
   function handleOnChange(e: React.ChangeEvent<HTMLInputElement>) {
     let newValue: string | number = e.target.value;
 
-    if (type === "number") {
+    if (type === 'number') {
       newValue = parseInt(newValue);
       onChange && onChange(e.target.name, newValue);
 
       return;
-    } else if (type === "currency") {
+    } else if (type === 'currency') {
       // Remove non-numeric characters
-      newValue = newValue.replace(/[^0-9.]/g, "");
+      newValue = newValue.replace(/[^0-9.]/g, '');
 
       // Format with commas
-      newValue = Number(newValue).toLocaleString("en-US", {
-        style: "decimal",
+      newValue = Number(newValue).toLocaleString('en-US', {
+        style: 'decimal'
       });
 
       onChange && onChange(e.target.name, newValue);
       return;
-    } else if (type === "date") {
+    } else if (type === 'date') {
       // Remove non-numeric characters
-      newValue = newValue.replace(/[^0-9/]/g, "");
+      newValue = newValue.replace(/[^0-9/]/g, '');
 
       // Format as yyyy/mm
       const match = newValue.match(/^(\d{0,4})(\/)?(\d{0,2})?(\/)?(\d{0,2})?$/);
 
       if (match) {
-        const year = match[1] || "";
-        const month = match[3] || "";
-        const day = match[5] || "";
+        const year = match[1] || '';
+        const month = match[3] || '';
+        const day = match[5] || '';
 
         if (day && day.length > 2) {
           // If more than 2 digits are entered for the day, ignore any additional input
@@ -83,13 +83,13 @@ export function InputText({
           // If the day is entered, ignore any further input for day
           newValue = `${year}/${month}/${day}`;
         } else {
-          newValue = `${year}${month && "/" + month}`;
+          newValue = `${year}${month && '/' + month}`;
         }
 
         onChange && onChange(e.target.name, newValue);
         return;
       }
-    } else if (type === "text") {
+    } else if (type === 'text') {
       onChange && onChange(e.target.name, newValue);
     }
   }
@@ -100,7 +100,7 @@ export function InputText({
         {label && <label data-testid={`${testId}-label`}>{label}</label>}
         {required && (
           <span data-testid={`${testId}-required`} className={styles.label}>
-            {" "}
+            {' '}
             *
           </span>
         )}
@@ -113,7 +113,7 @@ export function InputText({
           onChange={handleOnChange}
           type={typeMap[type]}
           name={name}
-          placeholder={type === "date" ? "yyyy/mm/dd" : placeholder}
+          placeholder={type === 'date' ? 'yyyy/mm/dd' : placeholder}
         />
         {icon && <FontAwesomeIcon icon={icon} width={15} />}
         {textHelper && textHelper}

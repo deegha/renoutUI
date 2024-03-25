@@ -1,11 +1,11 @@
-import { IImage } from "../imageUpload/imageUpload";
-import { TRenderImage } from "./d";
-import styles from "./styles.module.scss";
-import { Button } from "@/components";
+import { IImage } from '../imageUpload/imageUpload';
+import { TRenderImage } from './d';
+import styles from './styles.module.scss';
+import { Button } from '@/components';
 
 export function ShowAllImages({
   images,
-  close,
+  close
 }: {
   images: TRenderImage[];
   close: () => void;

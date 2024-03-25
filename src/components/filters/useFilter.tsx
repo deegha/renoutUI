@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { IOption } from "@/components/autoComplete/autoComplete";
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { IOption } from '@/components/autoComplete/autoComplete';
 
 type TFilterProps = {
   selectedRegionState: IOption | undefined;
@@ -15,7 +15,7 @@ export const useFilter = ({
   selectedPriceRangeState,
   furnishedState,
   gymState,
-  selectedNumberOfBedroomsState,
+  selectedNumberOfBedroomsState
 }: TFilterProps) => {
   const router = useRouter();
   const [selectedRegion, setSelectedRegion] = useState<IOption | undefined>(
@@ -32,7 +32,7 @@ export const useFilter = ({
   const [gym, setGym] = useState<boolean>(gymState ? gymState : false);
 
   function handleSearch() {
-    let query = "";
+    let query = '';
     if (selectedRegion) {
       query += `region=${selectedRegion.id}`;
     }
@@ -63,6 +63,6 @@ export const useFilter = ({
     setGym,
     setSelectedSelectedNumberOfBedrooms,
     selectedNumberOfBedrooms,
-    handleSearch,
+    handleSearch
   };
 };

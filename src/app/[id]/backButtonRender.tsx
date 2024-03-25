@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
 export function BackButtonRenderer({
-  children,
+  children
 }: {
   children: React.ReactNode;
 }) {

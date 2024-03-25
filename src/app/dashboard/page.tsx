@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
-import CreateAddUI from "../../components/createAdd/createAdd";
+import CreateAddUI from '../../components/createAdd/createAdd';
 
 export default function CreateAdd() {
   return (

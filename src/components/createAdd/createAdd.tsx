@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
-import { AutoComplete, Button, CheckBox, ImageUpload } from "@/components";
-import { IImage } from "@/components/imageUpload/imageUpload";
-import styles from "./styles.module.scss";
-import { Editor } from "react-draft-wysiwyg";
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import { sectionOneItems, sectionTwoItems } from "./staticContent";
-import { useCreateForm } from "./hooks/useCreateForm";
-import { useEditor } from "./hooks/useEditor";
-import { useFormImages } from "./hooks/useFormImages";
-import { TInputs, useInputs } from "./hooks/useInputs";
-import { InputBlock } from "./inputBlocks";
-import { locations } from "@/services/locations";
-import { IOption } from "../autoComplete/autoComplete";
-import { TType } from "../input/input";
+import { AutoComplete, Button, CheckBox, ImageUpload } from '@/components';
+import { IImage } from '@/components/imageUpload/imageUpload';
+import styles from './styles.module.scss';
+import { Editor } from 'react-draft-wysiwyg';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import { sectionOneItems, sectionTwoItems } from './staticContent';
+import { useCreateForm } from './hooks/useCreateForm';
+import { useEditor } from './hooks/useEditor';
+import { useFormImages } from './hooks/useFormImages';
+import { TInputs, useInputs } from './hooks/useInputs';
+import { InputBlock } from './inputBlocks';
+import { locations } from '@/services/locations';
+import { IOption } from '../autoComplete/autoComplete';
+import { TType } from '../input/input';
 
 export const CreateAddUI = () => {
   const { images, setImages, removeImage } = useFormImages();
@@ -24,7 +24,7 @@ export const CreateAddUI = () => {
     handleCheckBoxes,
     amenities,
     setLocation,
-    location,
+    location
   } = useInputs();
   const { editorState, onEditorStateChange } = useEditor();
   const { handleCreateProperty, loading } = useCreateForm();
@@ -40,18 +40,18 @@ export const CreateAddUI = () => {
   }
 
   const isFormNotReady =
-    inputs.title === "" ||
-    inputs.rentAmount === "0" ||
-    inputs.rentAmount === "" ||
-    inputs.contactNumber === "" ||
-    inputs.contactPerson === "" ||
+    inputs.title === '' ||
+    inputs.rentAmount === '0' ||
+    inputs.rentAmount === '' ||
+    inputs.contactNumber === '' ||
+    inputs.contactPerson === '' ||
     inputs.numOfBathrooms === 0 ||
     images.length === 0;
 
-  console.log(isFormNotReady, "isFormReady");
+  console.log(isFormNotReady, 'isFormReady');
 
   return (
-    <div className={styles.container} data-testid={"create-add"}>
+    <div className={styles.container} data-testid={'create-add'}>
       <h1> Creating an add</h1>
       <div className={styles.imageUploadArea}>
         <ImageUpload
@@ -77,7 +77,7 @@ export const CreateAddUI = () => {
           helper={item.helper}
           placeHolder={item.placeHolder}
           name={item.name}
-          type={item.type as "text" | "number"}
+          type={item.type as 'text' | 'number'}
           handler={handleInput}
           inputType={item.inputType as TType}
           required={item.required}
@@ -99,7 +99,7 @@ export const CreateAddUI = () => {
       {sectionTwoItems.map((item) => (
         <InputBlock
           required={item.required}
-          type={item.type as "text" | "number"}
+          type={item.type as 'text' | 'number'}
           key={item.name}
           title={item.title}
           helper={item.helper}

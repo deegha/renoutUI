@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { IImage } from "../../imageUpload/imageUpload";
+import { useState } from 'react';
+import { IImage } from '../../imageUpload/imageUpload';
 
 export function useFormImages() {
   const [images, setImagesState] = useState<Array<IImage>>([]);
@@ -16,6 +16,6 @@ export function useFormImages() {
   return {
     images,
     setImages,
-    removeImage,
+    removeImage
   };
 }

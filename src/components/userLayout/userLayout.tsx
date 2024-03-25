@@ -1,5 +1,5 @@
-import { Navbar } from "@/components";
-import styles from "./styles.module.scss";
+import { Navbar } from '@/components';
+import styles from './styles.module.scss';
 
 type UserLayoutProps = {
   children: React.ReactNode;

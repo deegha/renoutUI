@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export function useMobileFilterState(alwayOpen?: boolean) {
   const [isFilterOpen, setIsFilterOpen] = useState(alwayOpen ? true : false);
@@ -14,6 +14,6 @@ export function useMobileFilterState(alwayOpen?: boolean) {
   return {
     isFilterOpen,
     toggleFilter,
-    closeModal,
+    closeModal
   };
 }

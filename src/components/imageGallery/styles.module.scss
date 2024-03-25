@@ -1,16 +1,14 @@
-
 .moreContainer {
   position: absolute;
   bottom: 10px;
-  right: 10px
+  right: 10px;
 }
-
 
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   grid-gap: 10px;
-  
+
   overflow: hidden;
   background-color: rgb(106, 125, 141);
   width: 100%;

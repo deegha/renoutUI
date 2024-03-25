@@ -1,7 +1,7 @@
-import { fetchImages, fetchProperty } from "@/services/propertyService";
-import { Navbar, ImageGallery } from "@/components";
-import styles from "./styles.module.scss";
-import { getLocation } from "@/services/locations";
+import { fetchImages, fetchProperty } from '@/services/propertyService';
+import { Navbar, ImageGallery } from '@/components';
+import styles from './styles.module.scss';
+import { getLocation } from '@/services/locations';
 
 type TProps = {
   params: { id: string };
@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: TProps) {
     title: property.title,
     description: property.title,
     openGraph: {
-      images: images,
-    },
+      images: images
+    }
   };
 }
 
@@ -47,9 +47,9 @@ export default async function Property({ params }: TProps) {
               {property.securityDeposit > 0 && (
                 <p>Security deposit: {property.securityDeposit}</p>
               )}
-              <p>Furnished: {property.furnishedStatus ? "Yes" : "No"}</p>
-              <p>Pool: {property.pool ? "Yes" : "No"}</p>
-              <p>Gym: {property.gym ? "Yes" : "No"}</p>
+              <p>Furnished: {property.furnishedStatus ? 'Yes' : 'No'}</p>
+              <p>Pool: {property.pool ? 'Yes' : 'No'}</p>
+              <p>Gym: {property.gym ? 'Yes' : 'No'}</p>
               <p>Number of bedrooms: {property.numOfBedrooms}</p>
               <p>Number of bathrooms: {property.numOfBathrooms}</p>
               <p>Area: {property.floorArea} sqft</p>

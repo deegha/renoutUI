@@ -1,14 +1,14 @@
-"use client";
-import { useState } from "react";
-import { Combobox } from "@headlessui/react";
+'use client';
+import { useState } from 'react';
+import { Combobox } from '@headlessui/react';
 import {
   faChevronDown,
-  faCheckCircle,
-} from "@fortawesome/free-solid-svg-icons";
+  faCheckCircle
+} from '@fortawesome/free-solid-svg-icons';
 
-import styles from "./styles.module.scss";
-import { Fragment } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styles from './styles.module.scss';
+import { Fragment } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export interface IOption {
   name: string;
@@ -34,11 +34,11 @@ export function AutoComplete({
   loading,
   smallInput,
   label,
-  testId,
+  testId
 }: IAutoComplete) {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState('');
   const filteredOptions =
-    query === ""
+    query === ''
       ? options
       : options.filter((option) => {
           return option.name.toLowerCase().includes(query.toLowerCase());

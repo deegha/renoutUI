@@ -17,7 +17,6 @@ export type TProduct = {
   floorArea: number;
 };
 
-
 export type TFilter = {
   propertyType?: string;
   beds?: string;
@@ -27,25 +26,24 @@ export type TFilter = {
   minRent?: string;
   page?: string;
   region?: string;
-  gym?:  number | string;
+  gym?: number | string;
 };
 
-export type TMethod = "GET" | "POST" | "PUT";
+export type TMethod = 'GET' | 'POST' | 'PUT';
 
 export type TOptions = {
   headers: Record<string, string>;
   method: TMethod;
   body?: BodyInit | null;
   cache?: RequestCache;
-  credentials: RequestCredentials | undefined
+  credentials: RequestCredentials | undefined;
 };
-
 
 export type RegisterProps = {
   email: string;
   name: string;
   password: string;
-}
+};
 
 export interface RegisterResponse {
   data: {
@@ -60,7 +58,7 @@ export interface RegisterResponse {
   success: boolean;
 }
 
-export interface User  {
+export interface User {
   id: number;
   name: string;
   email: string;
@@ -72,15 +70,13 @@ export interface User  {
 export interface LoginResponse {
   message: string;
   success: boolean;
-  data: User
+  data: User;
 }
 
 export interface FetchProductsResponse {
   products: TProduct[];
   numberOfPages: number;
 }
-
-
 
 export interface ICreateProperty {
   title: string;

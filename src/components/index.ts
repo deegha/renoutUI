@@ -1,15 +1,15 @@
-export {Navbar} from "./navbar/navbar"
-export {UserLayout} from "./userLayout/userLayout"
-export {Card} from "./card/card"
-export {ProductsList} from "./productsList/productsList"
-export {Pagination} from "./pagination/pagination"
-export {InputText} from "./input/input"
-export {AutoComplete} from "./autoComplete/autoComplete"
-export {Filters} from "./filters/filters"
-export {Button} from "./button/button"
-export {CheckBox} from "./checkBox/checkBox"
-export {DashBoardNav} from "./dashboardNav/dashboardNav"
-export {TextEditor} from "./textEditer/textEditer"
-export {ImageUpload} from "./imageUpload/imageUpload"
-export {BackButton} from "./backButton/backButton"
-export {ImageGallery} from "./imageGallery/imageGallary"
+export { Navbar } from './navbar/navbar';
+export { UserLayout } from './userLayout/userLayout';
+export { Card } from './card/card';
+export { ProductsList } from './productsList/productsList';
+export { Pagination } from './pagination/pagination';
+export { InputText } from './input/input';
+export { AutoComplete } from './autoComplete/autoComplete';
+export { Filters } from './filters/filters';
+export { Button } from './button/button';
+export { CheckBox } from './checkBox/checkBox';
+export { DashBoardNav } from './dashboardNav/dashboardNav';
+export { TextEditor } from './textEditer/textEditer';
+export { ImageUpload } from './imageUpload/imageUpload';
+export { BackButton } from './backButton/backButton';
+export { ImageGallery } from './imageGallery/imageGallary';

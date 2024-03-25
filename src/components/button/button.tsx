@@ -1,8 +1,8 @@
-import React from "react";
-import styles from "./styles.module.scss";
+import React from 'react';
+import styles from './styles.module.scss';
 
 type ButtonProps = {
-  variant: "primary" | "secondary" | "info";
+  variant: 'primary' | 'secondary' | 'info';
   title: string;
   icon?: React.ReactNode;
   onClick: (e: React.SyntheticEvent) => void;
@@ -18,16 +18,16 @@ export const Button: React.FC<ButtonProps> = ({
   onClick,
   loading,
   testId,
-  disabled,
+  disabled
 }) => {
-  let className = "primary";
+  let className = 'primary';
 
-  if (variant === "primary") {
-    className = "primary";
-  } else if (variant === "secondary") {
-    className = "secondary";
-  } else if (variant === "info") {
-    className = "info";
+  if (variant === 'primary') {
+    className = 'primary';
+  } else if (variant === 'secondary') {
+    className = 'secondary';
+  } else if (variant === 'info') {
+    className = 'info';
   }
 
   return (

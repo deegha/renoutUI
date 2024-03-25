@@ -1,6 +1,6 @@
-import Link from "next/link";
-import styles from "./styles.module.scss";
-import Image from "next/image";
+import Link from 'next/link';
+import styles from './styles.module.scss';
+import Image from 'next/image';
 
 export const Navbar = () => {
   return (
@@ -12,8 +12,8 @@ export const Navbar = () => {
         alt="Rentouts.lk"
       /> */}
       <nav className={styles.navBar}>
-        <Link href={"/"}>Rentouts.lk</Link>
-        <Link href={"/dashboard"}>Add your property</Link>
+        <Link href={'/'}>Rentouts.lk</Link>
+        <Link href={'/dashboard'}>Add your property</Link>
       </nav>
     </div>
   );

@@ -1,5 +1,5 @@
-import { EditorState } from "draft-js";
-import { useState } from "react";
+import { EditorState } from 'draft-js';
+import { useState } from 'react';
 
 export function useEditor() {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
@@ -11,6 +11,6 @@ export function useEditor() {
 
   return {
     editorState,
-    onEditorStateChange,
+    onEditorStateChange
   };
 }

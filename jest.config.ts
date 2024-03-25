@@ -9,18 +9,18 @@ const config: Config = {
   moduleNameMapper: {
     '@/(.*)': '<rootDir>/src/$1',
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
-    '^.+\\.(css|sass|scss)$': '<rootDir>/__mocks__/styleMock.js'
+    '^.+\\.(css|sass|scss)$': '<rootDir>/__mocks__/styleMock.js',
   },
   testEnvironment: 'jsdom',
   transformIgnorePatterns: [
     '/node_modules/',
-    '^.+\\.module\\.(css|sass|scss)$'
+    '^.+\\.module\\.(css|sass|scss)$',
   ],
   moduleDirectories: ['node_modules', '/src'],
   transform: {
     /* Use babel-jest to transpile tests with the next/babel preset
     https://jestjs.io/docs/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object */
-    '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }]
+    '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }],
   },
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -177,7 +177,7 @@ const config: Config = {
   // ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-  testPathIgnorePatterns: ['/node_modules/', '/.next/']
+  testPathIgnorePatterns: ['/node_modules/', '/.next/'],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
   // testRegex: [],

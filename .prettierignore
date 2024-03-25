@@ -9,3 +9,5 @@ node_modules
 next-env.d.ts
 next.config.ts
 yarn.lock
+__tests__
+__mocks__

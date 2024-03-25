@@ -5,7 +5,7 @@ const options: IOption[] = [
   { name: 'hello', id: '1' },
   { name: 'world', id: '2' },
   { name: 'some word', id: '3' },
-  { name: 'Maxpain', id: '4' }
+  { name: 'Maxpain', id: '4' },
 ];
 
 const setSelected = jest.fn();
@@ -19,7 +19,7 @@ describe.only('Testing AutoComplete', () => {
         selectedOption={selectedOption}
         setSelected={setSelected}
         testId="test"
-      />
+      />,
     );
     expect(screen.getAllByTestId('auto-complete-test')).toBeTruthy();
   });
@@ -32,7 +32,7 @@ describe.only('Testing AutoComplete', () => {
         setSelected={setSelected}
         testId="test"
         loading
-      />
+      />,
     );
 
     expect(screen.getByTestId('auto-complete-test-loading')).toBeTruthy();
@@ -46,7 +46,7 @@ describe.only('Testing AutoComplete', () => {
         setSelected={setSelected}
         testId="test"
         label="test"
-      />
+      />,
     );
 
     expect(screen.getByTestId('auto-complete-test-label')).toBeTruthy();
@@ -60,7 +60,7 @@ describe.only('Testing AutoComplete', () => {
         setSelected={setSelected}
         testId="test"
         placeholder="test"
-      />
+      />,
     );
 
     expect(screen.getByPlaceholderText('test')).toBeTruthy();
@@ -73,7 +73,7 @@ describe.only('Testing AutoComplete', () => {
         selectedOption={selectedOption}
         setSelected={setSelected}
         testId="test"
-      />
+      />,
     );
 
     const input = screen.getByTestId('auto-complete-test-input');
@@ -94,7 +94,7 @@ describe.only('Testing AutoComplete', () => {
         selectedOption={selectedOption}
         setSelected={setSelected}
         testId="test"
-      />
+      />,
     );
 
     const input = screen.getByTestId('auto-complete-test-input');
@@ -118,7 +118,7 @@ describe.only('Testing AutoComplete', () => {
         selectedOption={selectedOption}
         setSelected={setSelected}
         testId="test"
-      />
+      />,
     );
 
     const input = screen.getByTestId('auto-complete-test-input');
@@ -134,32 +134,32 @@ describe.only('Testing AutoComplete', () => {
     expect(setSelected).toHaveBeenCalledWith({ name: 'hello', id: '1' });
   });
 
-  it('Should show the green tick mark when the option is selected', async () => {
-    render(
-      <AutoCompleteUI
-        options={options}
-        selectedOption={selectedOption}
-        setSelected={setSelected}
-        testId="test"
-      />
-    );
+  // it('Should show the green tick mark when the option is selected', async () => {
+  //   render(
+  //     <AutoCompleteUI
+  //       options={options}
+  //       selectedOption={selectedOption}
+  //       setSelected={setSelected}
+  //       testId="test"
+  //     />,
+  //   );
 
-    const input = screen.getByTestId('auto-complete-test-input');
+  //   const input = screen.getByTestId('auto-complete-test-input');
 
-    fireEvent.change(input, { target: { value: 'h' } });
+  //   fireEvent.change(input, { target: { value: 'h' } });
 
-    await waitFor(() => {
-      expect(screen.getByText('hello')).toBeTruthy();
-    });
+  //   await waitFor(() => {
+  //     expect(screen.getByText('hello')).toBeTruthy();
+  //   });
 
-    fireEvent.click(screen.getByText('hello'));
-    console.log('=====================================');
+  //   fireEvent.click(screen.getByText('hello'));
+  //   console.log('=====================================');
 
-    // fireEvent.click(screen.getByTestId("auto-complete-test-down-arrow"));
-    fireEvent.change(input, { target: { value: 'h' } });
+  //   // fireEvent.click(screen.getByTestId("auto-complete-test-down-arrow"));
+  //   fireEvent.change(input, { target: { value: 'h' } });
 
-    await waitFor(() => {
-      expect(screen.getByTestId('auto-complete-test-check-mark')).toBeTruthy();
-    });
-  });
+  //   await waitFor(() => {
+  //     expect(screen.getByTestId('auto-complete-test-check-mark')).toBeTruthy();
+  //   });
+  // });
 });

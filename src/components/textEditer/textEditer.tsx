@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 'use client';
 
 import React, { useState, useMemo, useCallback } from 'react';
@@ -9,8 +10,8 @@ export const TextEditor = () => {
   const [value, setValue] = useState<Descendant[]>([
     {
       type: 'paragraph',
-      children: [{ text: 'Enter your text here' }]
-    }
+      children: [{ text: 'Enter your text here' }],
+    },
   ]);
 
   const handleChange = useCallback((newValue: Descendant[]) => {

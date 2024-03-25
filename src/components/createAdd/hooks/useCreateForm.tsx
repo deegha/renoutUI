@@ -59,9 +59,9 @@ export function useCreateForm() {
   const handleCreateProperty = async (
     inputs: TInputs,
     amenities: TAmenities,
-    images: Array<IImage>,
+    images: IImage[],
     description: string,
-    locationId: number
+    locationId: number,
   ) => {
     setLoading(true);
 
@@ -73,7 +73,7 @@ export function useCreateForm() {
     }
 
     const uploadPromises = images.map((image) =>
-      uploadImage(image.file as File)
+      uploadImage(image.file as File),
     );
     const urls = await Promise.all(uploadPromises);
     const data: ICreateProperty = {
@@ -82,15 +82,15 @@ export function useCreateForm() {
       productCategory: 2,
       status: 1,
       images: urls,
-      locationId: locationId,
-      description: description,
+      locationId,
+      description,
       SeparateElectricity: true,
       furnishedStatus: amenities.furnished,
       rentAmount: parseInt(inputs.rentAmount.replace(/,/g, ''), 10),
       advancePayment: parseInt(inputs.advancePayment.replace(/,/g, ''), 10),
       securityDeposit: parseInt(inputs.securityDeposit.replace(/,/g, ''), 10),
       propertyType: 1,
-      createdBy: user?.id as number
+      createdBy: user?.id as number,
     };
 
     createProperty(data)
@@ -107,6 +107,6 @@ export function useCreateForm() {
   return {
     handleCreateProperty,
     loading,
-    formErrors
+    formErrors,
   };
 }

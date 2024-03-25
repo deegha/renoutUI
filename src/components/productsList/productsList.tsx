@@ -19,7 +19,7 @@ export async function ProductsList({
   region,
   bedrooms,
   furnished,
-  gym
+  gym,
 }: IProps) {
   let productResponse: FetchProductsResponse;
 
@@ -30,13 +30,13 @@ export async function ProductsList({
       maxRent: rentAmount || '',
       beds: bedrooms || '',
       furnished: furnished ? 1 : '',
-      region: region,
-      gym: gym
+      region,
+      gym,
     });
   } catch (error) {
     productResponse = {
       products: [],
-      numberOfPages: 0
+      numberOfPages: 0,
     };
     pageError = true;
   }
@@ -53,13 +53,13 @@ export async function ProductsList({
     <section className={styles.listContainer}>
       <Filters />
       {productResponse.products.map((product) => {
-        const perks: Array<string> = [];
+        const perks: string[] = [];
         perks.push(
           product.numOfBedrooms + ' Bedrooms',
           product.numOfBathrooms + ' Bathrooms',
           product.furnishedStatus ? 'Furnished' : 'Not Furnished',
           product.gym ? 'Gym' : '',
-          product.pool ? 'Pool' : ''
+          product.pool ? 'Pool' : '',
         );
         return (
           <Card

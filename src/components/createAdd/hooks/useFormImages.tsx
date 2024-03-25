@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { IImage } from '../../imageUpload/imageUpload';
 
 export function useFormImages() {
-  const [images, setImagesState] = useState<Array<IImage>>([]);
+  const [images, setImagesState] = useState<IImage[]>([]);
 
-  const setImages = (images: Array<IImage>) => {
+  const setImages = (images: IImage[]) => {
     setImagesState(images);
   };
 
@@ -16,6 +16,6 @@ export function useFormImages() {
   return {
     images,
     setImages,
-    removeImage
+    removeImage,
   };
 }

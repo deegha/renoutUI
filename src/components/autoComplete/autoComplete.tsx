@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Combobox } from '@headlessui/react';
 import {
   faChevronDown,
-  faCheckCircle
+  faCheckCircle,
 } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './styles.module.scss';
@@ -16,8 +16,9 @@ export interface IOption {
 }
 
 export interface IAutoComplete {
-  options: Array<IOption>;
+  options: IOption[];
   selectedOption: IOption | undefined;
+  // eslint-disable-next-line no-unused-vars
   setSelected: (option: IOption) => void;
   placeholder?: string;
   loading?: boolean;
@@ -34,7 +35,7 @@ export function AutoComplete({
   loading,
   smallInput,
   label,
-  testId
+  testId,
 }: IAutoComplete) {
   const [query, setQuery] = useState('');
   const filteredOptions =

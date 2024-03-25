@@ -10,6 +10,7 @@ interface IAuthContext {
   loading: boolean;
   user: User | null;
   logout: () => void;
+  // eslint-disable-next-line no-unused-vars
   login: (email: string, password: string) => void;
 }
 
@@ -26,7 +27,7 @@ const authContextDefaultValues: IAuthContext = {
   },
   login: () => {
     return false;
-  }
+  },
 };
 
 const AuthContext = React.createContext(authContextDefaultValues);
@@ -37,7 +38,7 @@ export const useAuth = () => {
 
 export const AuthProvider: React.FC<IProps> = ({ children }) => {
   const [authenticated, setAuthenticated] = useState<boolean | 'loading'>(
-    'loading'
+    'loading',
   );
   const [loading, setLoading] = useState<boolean>(false);
   const [user, setUser] = useState<User | null>(null);
@@ -84,7 +85,7 @@ export const AuthProvider: React.FC<IProps> = ({ children }) => {
     user,
     logout,
     login,
-    setAuthUser
+    setAuthUser,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

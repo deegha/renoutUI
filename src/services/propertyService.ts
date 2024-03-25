@@ -3,7 +3,7 @@ import {
   TFilter,
   FetchProductsResponse,
   ICreateProperty,
-  IImage
+  IImage,
 } from '../services/d';
 import { handleCall } from './backendClient';
 
@@ -11,7 +11,7 @@ export const createProperty = (data: ICreateProperty) =>
   handleCall('products', 'POST', data);
 
 export const fetchProperties = async (
-  filters: TFilter
+  filters: TFilter,
 ): Promise<FetchProductsResponse> => {
   //create a query string from the filters
   const queryString = Object.keys(filters)
@@ -22,14 +22,14 @@ export const fetchProperties = async (
     `products?${queryString}`,
     'GET',
     undefined,
-    'no-cache'
+    'no-cache',
   );
   console.log(response, 'response');
 
   if (!response.data) {
     return {
       products: [] as TProduct[],
-      numberOfPages: 0
+      numberOfPages: 0,
     };
   }
 
@@ -40,11 +40,11 @@ export const fetchProperties = async (
   console.log(response.data, 'TotalPages');
   return {
     products: products as TProduct[],
-    numberOfPages: response.data.TotalPages
+    numberOfPages: response.data.TotalPages,
   };
 };
 
-export const fetchImages = async (id: string): Promise<Array<IImage>> => {
+export const fetchImages = async (id: string): Promise<IImage[]> => {
   const response = await handleCall(`products/${id}/images`, 'GET');
   if (!response.data) {
     return [];
@@ -57,7 +57,7 @@ export const fetchProperty = async (id: string): Promise<TProduct> => {
     `products/${id}`,
     'GET',
     undefined,
-    'no-cache'
+    'no-cache',
   );
 
   return response.data;

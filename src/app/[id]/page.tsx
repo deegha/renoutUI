@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: TProps) {
     title: property.title,
     description: property.title,
     openGraph: {
-      images: images
-    }
+      images,
+    },
   };
 }
 

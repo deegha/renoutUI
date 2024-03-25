@@ -7,6 +7,7 @@ interface ICheckBox {
   label: string;
   isChecked: boolean;
   name: string;
+  // eslint-disable-next-line no-unused-vars
   onChange: (name: string, isChecked: boolean) => void;
   testId?: string;
 }
@@ -16,7 +17,7 @@ export function CheckBox({
   isChecked,
   onChange,
   name,
-  testId
+  testId,
 }: ICheckBox) {
   return (
     <Switch

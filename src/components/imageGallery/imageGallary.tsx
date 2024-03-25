@@ -11,7 +11,7 @@ export function ImageGallery({ images }: { images: IImage[] }) {
 
   const imagesToRender = images.slice(0, 4).map((image, index) => ({
     src: image.url,
-    alt: `Image ${index + 1}`
+    alt: `Image ${index + 1}`,
   }));
 
   function showMorePhotos() {
@@ -21,6 +21,7 @@ export function ImageGallery({ images }: { images: IImage[] }) {
   return (
     <div className={styles.gallery}>
       {imagesToRender.map((image, index) => (
+        // eslint-disable-next-line @next/next/no-img-element
         <img
           key={index}
           className={styles.galleryItem}

@@ -5,6 +5,7 @@ type ButtonProps = {
   variant: 'primary' | 'secondary' | 'info';
   title: string;
   icon?: React.ReactNode;
+  // eslint-disable-next-line no-unused-vars
   onClick: (e: React.SyntheticEvent) => void;
   loading?: boolean;
   testId?: string;
@@ -18,7 +19,7 @@ export const Button: React.FC<ButtonProps> = ({
   onClick,
   loading,
   testId,
-  disabled
+  disabled,
 }) => {
   let className = 'primary';
 

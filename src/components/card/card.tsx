@@ -18,7 +18,7 @@ export const Card: React.FC<CardProps> = async ({
   items,
   id,
   advanceAmount,
-  securityDeposit
+  securityDeposit,
 }) => {
   return (
     <Link className={styles.cardContainer} href={`/${id}`}>

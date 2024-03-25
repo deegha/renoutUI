@@ -24,7 +24,7 @@ export const CreateAddUI = () => {
     handleCheckBoxes,
     amenities,
     setLocation,
-    location
+    location,
   } = useInputs();
   const { editorState, onEditorStateChange } = useEditor();
   const { handleCreateProperty, loading } = useCreateForm();
@@ -35,7 +35,7 @@ export const CreateAddUI = () => {
       amenities,
       images,
       editorState.getCurrentContent().getPlainText(),
-      location?.id as number
+      location?.id as number,
     );
   }
 

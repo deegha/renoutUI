@@ -1,6 +1,6 @@
 'use server';
 import styles from './styles.module.scss';
-import { ProductsList, Navbar, UserLayout } from '@/components';
+import { ProductsList, UserLayout } from '@/components';
 import { Suspense } from 'react';
 
 interface IProps {

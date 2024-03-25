@@ -12,8 +12,8 @@ import { useState } from 'react';
 const links = [
   {
     url: '/dashboard',
-    name: 'Create Adds'
-  }
+    name: 'Create Adds',
+  },
 ];
 
 export function DashBoardNav() {

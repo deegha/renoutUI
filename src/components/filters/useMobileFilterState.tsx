@@ -14,6 +14,6 @@ export function useMobileFilterState(alwayOpen?: boolean) {
   return {
     isFilterOpen,
     toggleFilter,
-    closeModal
+    closeModal,
   };
 }

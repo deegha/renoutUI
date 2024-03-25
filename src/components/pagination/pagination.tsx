@@ -2,7 +2,7 @@
 
 import styles from './pagination.module.scss';
 import Link from 'next/link';
-import { useRouter, usePathname, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 
 interface PaginationProps {
   totalPages: number;
@@ -11,7 +11,7 @@ interface PaginationProps {
 
 export const Pagination: React.FC<PaginationProps> = ({
   totalPages,
-  selectedPage
+  selectedPage,
 }) => {
   const path = useSearchParams();
 
@@ -37,7 +37,7 @@ export const Pagination: React.FC<PaginationProps> = ({
               {pageNumber}
             </Link>
           );
-        }
+        },
       )}
     </div>
   );

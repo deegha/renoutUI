@@ -1,16 +1,8 @@
 'use server';
 import styles from './page.module.scss';
 import { Filters, UserLayout } from '@/components';
-import { cookies } from 'next/headers';
-import Image from 'next/image';
 
-interface IProps {
-  searchParams?: { [key: string]: string };
-}
-
-export default async function Home({ searchParams }: IProps) {
-  const cookieStore = cookies();
-  console.log(cookieStore.get('jwt'));
+export default async function Home() {
   return (
     <main className={styles.main}>
       <UserLayout>

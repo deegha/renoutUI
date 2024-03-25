@@ -14,14 +14,17 @@ interface BlockProps {
   value?: string | number;
   loading?: boolean;
   handler: (
+    // eslint-disable-next-line no-unused-vars
     name: string,
+    // eslint-disable-next-line no-unused-vars
     value: string | number,
-    type: 'text' | 'number'
+    // eslint-disable-next-line no-unused-vars
+    type: 'text' | 'number',
   ) => void;
 }
 
 export const InputBlock: React.FC<BlockProps> = memo(
-  ({
+  function inputBlockFuntion({
     title,
     handler,
     placeHolder,
@@ -30,8 +33,8 @@ export const InputBlock: React.FC<BlockProps> = memo(
     inputType,
     value,
     loading,
-    required
-  }) => {
+    required,
+  }) {
     return (
       <div className={styles.inputBlock} title={title}>
         <InputText
@@ -49,5 +52,5 @@ export const InputBlock: React.FC<BlockProps> = memo(
         />
       </div>
     );
-  }
+  },
 );

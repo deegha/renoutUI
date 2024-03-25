@@ -1,11 +1,10 @@
-import { IImage } from '../imageUpload/imageUpload';
 import { TRenderImage } from './d';
 import styles from './styles.module.scss';
 import { Button } from '@/components';
 
 export function ShowAllImages({
   images,
-  close
+  close,
 }: {
   images: TRenderImage[];
   close: () => void;
@@ -16,6 +15,7 @@ export function ShowAllImages({
         <Button title="Close" variant="info" onClick={close} />
         <div className={styles.galleryShowAll}>
           {images.map((image, index) => (
+            // eslint-disable-next-line @next/next/no-img-element
             <img
               key={index}
               className={styles.galleryItem}

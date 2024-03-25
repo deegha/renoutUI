@@ -4,7 +4,7 @@ export const bedrooms = [
   { name: '3 bedrooms', id: '3' },
   { name: '4 bedrooms', id: '4' },
   { name: '5 bedrooms', id: '5' },
-  { name: 'Any', id: '' }
+  { name: 'Any', id: '' },
 ];
 
 export const priceRange = [
@@ -14,7 +14,7 @@ export const priceRange = [
   { name: 'Below 200,000', id: '200000' },
   { name: 'Below 250,000', id: '250000' },
   { name: 'Below 300,000', id: '300000' },
-  { name: 'Any', id: '' }
+  { name: 'Any', id: '' },
 ];
 
 export function getBedroomOption(id: string) {

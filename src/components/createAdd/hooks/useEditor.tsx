@@ -11,6 +11,6 @@ export function useEditor() {
 
   return {
     editorState,
-    onEditorStateChange
+    onEditorStateChange,
   };
 }

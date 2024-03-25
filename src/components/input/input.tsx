@@ -6,6 +6,7 @@ import React from 'react';
 export type TType = 'text' | 'number' | 'email' | 'currency' | 'date';
 interface IInput {
   value?: string | number;
+  // eslint-disable-next-line no-unused-vars
   onChange?: (name: string, value: string | number) => void;
   icon?: IconProp;
   type: TType;
@@ -28,7 +29,7 @@ const typeMap = {
   number: 'number',
   email: 'email',
   currency: 'string',
-  date: 'string'
+  date: 'string',
 };
 
 export function InputText({
@@ -43,7 +44,7 @@ export function InputText({
   placeholder,
   error,
   testId,
-  loading
+  loading,
 }: IInput) {
   function handleOnChange(e: React.ChangeEvent<HTMLInputElement>) {
     let newValue: string | number = e.target.value;
@@ -59,7 +60,7 @@ export function InputText({
 
       // Format with commas
       newValue = Number(newValue).toLocaleString('en-US', {
-        style: 'decimal'
+        style: 'decimal',
       });
 
       onChange && onChange(e.target.name, newValue);

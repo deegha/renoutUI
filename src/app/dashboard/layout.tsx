@@ -2,13 +2,12 @@
 
 import { DashBoardNav } from '@/components';
 import styles from './styles.module.scss';
-import { useRouter } from 'next/navigation';
 import { AuthProvider, useAuth } from '@/context/authContenxt';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function DashboardLayout({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
@@ -20,11 +19,10 @@ export default function DashboardLayout({
 }
 
 function DashBoard({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const router = useRouter();
   const { loading, user } = useAuth();
 
   if (loading) return <div>loading</div>;

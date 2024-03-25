@@ -30,14 +30,14 @@ export function Filters({ alwayOpen }: IProps) {
     setGym,
     setSelectedSelectedNumberOfBedrooms,
     selectedNumberOfBedrooms,
-    handleSearch
+    handleSearch,
   } = useFilter({
     selectedRegionState: initialFilterOptions.selectedRegion,
     selectedPriceRangeState: initialFilterOptions.selectedPriceRangeState,
     furnishedState: initialFilterOptions.furnishedState,
     gymState: initialFilterOptions.gymState,
     selectedNumberOfBedroomsState:
-      initialFilterOptions.selectedNumberOfBedroomsState
+      initialFilterOptions.selectedNumberOfBedroomsState,
   });
 
   function handleSubmit() {

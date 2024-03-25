@@ -1,13 +1,10 @@
 'use client';
 
-import { getUser } from '@/services/authenticationService';
-import { useEffect, useState } from 'react';
-import { User } from '@/services/d';
 import { useRouter } from 'next/navigation';
 import { AuthProvider, useAuth } from '@/context/authContenxt';
 
 export default function LoginLayout({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
@@ -19,7 +16,7 @@ export default function LoginLayout({
 }
 
 function LoginRender({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {

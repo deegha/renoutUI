@@ -1,4 +1,3 @@
-import { ICreateProperty } from '@/services/d';
 import { useState } from 'react';
 
 export type TAmenities = {
@@ -32,7 +31,7 @@ export function useInputs() {
     pool: false,
     gym: false,
     generators: false,
-    furnished: false
+    furnished: false,
   });
   const [inputs, setInputs] = useState<TInputs>({
     title: '',
@@ -46,9 +45,10 @@ export function useInputs() {
     productCategory: 0,
     status: 0,
     contactNumber: '',
-    contactPerson: ''
+    contactPerson: '',
   });
 
+  // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
   const [location, setLocation] = useState<TLocation>({} as TLocation);
 
   // handling input changes
@@ -56,7 +56,7 @@ export function useInputs() {
     console.log(name, value);
     setInputs((prevInputs: TInputs) => ({
       ...prevInputs,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -64,7 +64,7 @@ export function useInputs() {
   const handleCheckBoxes = (key: string, change: boolean) => {
     setAmanitues((prevAmenities) => ({
       ...prevAmenities,
-      [key]: change
+      [key]: change,
     }));
   };
 
@@ -74,6 +74,6 @@ export function useInputs() {
     handleCheckBoxes,
     amenities,
     setLocation,
-    location
+    location,
   };
 }

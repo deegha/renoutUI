@@ -7,7 +7,7 @@ export const sectionOneItems = [
     placeHolder: 'Enter title',
     type: 'text',
     required: true,
-    inputType: 'text'
+    inputType: 'text',
   },
   {
     name: 'contactNumber',
@@ -16,7 +16,7 @@ export const sectionOneItems = [
     placeHolder: 'Eg : 0771234567',
     type: 'text',
     required: true,
-    inputType: 'text'
+    inputType: 'text',
   },
   {
     name: 'contactPerson',
@@ -25,7 +25,7 @@ export const sectionOneItems = [
     placeHolder: 'Eg : Jhone Doe',
     type: 'text',
     required: true,
-    inputType: 'text'
+    inputType: 'text',
   },
   {
     name: 'rentAmount',
@@ -35,7 +35,7 @@ export const sectionOneItems = [
     placeHolder: 'Enter expected monthly rent',
     type: 'number',
     inputType: 'currency',
-    required: true
+    required: true,
   },
   {
     name: 'advancePayment',
@@ -45,7 +45,7 @@ export const sectionOneItems = [
     placeHolder: 'Eg : 25,000 LKR',
     type: 'number',
     inputType: 'currency',
-    required: false
+    required: false,
   },
   {
     name: 'securityDeposit',
@@ -55,8 +55,8 @@ export const sectionOneItems = [
     placeHolder: 'Eg : 100,000 LKR',
     type: 'number',
     inputType: 'currency',
-    required: false
-  }
+    required: false,
+  },
 ];
 
 export const sectionTwoItems = [
@@ -68,7 +68,7 @@ export const sectionTwoItems = [
     placeHolder: 'eg: 3',
     type: 'number',
     inputType: 'number',
-    required: true
+    required: true,
   },
   {
     name: 'numOfBathrooms',
@@ -78,7 +78,7 @@ export const sectionTwoItems = [
     placeHolder: 'eg: 3',
     type: 'number',
     inputType: 'number',
-    required: true
+    required: true,
   },
   {
     name: 'floorArea',
@@ -87,6 +87,6 @@ export const sectionTwoItems = [
     placeHolder: 'eg: 1200',
     type: 'number',
     inputType: 'number',
-    required: false
-  }
+    required: false,
+  },
 ];

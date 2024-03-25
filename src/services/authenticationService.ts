@@ -1,7 +1,6 @@
-import { type } from 'os';
 import { handleCall } from './backendClient';
-import exp from 'constants';
-import { RegisterProps, RegisterResponse, LoginResponse, User } from './d';
+
+import { RegisterProps, RegisterResponse, LoginResponse } from './d';
 
 export async function register(user: RegisterProps) {
   const response: RegisterResponse = await handleCall('user', 'POST', user);
@@ -18,7 +17,7 @@ export async function login(email: string, password: string) {
     'login',
     'POST',
     { email, password },
-    'no-cache'
+    'no-cache',
   );
   return response;
 }

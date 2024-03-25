@@ -12,15 +12,17 @@ export interface IImage {
 }
 
 export interface IProps {
+  // eslint-disable-next-line no-unused-vars
   onChangeImage: (image: IImage) => void;
   selectedImages: IImage[];
+  // eslint-disable-next-line no-unused-vars
   removeImage?: (index: number) => void;
 }
 
 export const ImageUpload = memo(function ImageUpload({
   onChangeImage,
   selectedImages,
-  removeImage
+  removeImage,
 }: IProps) {
   const [isHovered, setIsHovered] = useState(false);
   const { createNotification } = useAlert();
@@ -41,19 +43,19 @@ export const ImageUpload = memo(function ImageUpload({
           if (currentFile.size > MAX_FILE_SIZE) {
             createNotification({
               type: 'error',
-              message: `The file ${currentFile.name} is too large.`
+              message: `The file ${currentFile.name} is too large.`,
             });
 
             throw new Error('File too large to handle');
           }
           return {
             url: URL.createObjectURL(currentFile),
-            file: currentFile
+            file: currentFile,
           };
         }
         createNotification({
           type: 'error',
-          message: `You entered an invalid file type:${currentFile.type}`
+          message: `You entered an invalid file type:${currentFile.type}`,
         });
       });
 
@@ -64,7 +66,7 @@ export const ImageUpload = memo(function ImageUpload({
       console.log(err);
       createNotification({
         type: 'error',
-        message: `Something went wrong`
+        message: `Something went wrong`,
       });
     }
   };

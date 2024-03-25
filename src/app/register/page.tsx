@@ -22,7 +22,7 @@ const Register = () => {
       const response = await register({
         email,
         name: `${firstName} ${lastName}`,
-        password
+        password,
       });
 
       if (response) {
@@ -40,6 +40,7 @@ const Register = () => {
         setStatus('Redirecting...');
         router.push('/dashboard');
       }
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (e: any) {
       setStatus('');
       setError(e.message);

@@ -15,11 +15,11 @@ export default function useAlert() {
       pauseOnHover: true,
       draggable: true,
       progress: 0,
-      theme: 'dark'
+      theme: 'dark',
     });
   };
 
   return {
-    createNotification
+    createNotification,
   };
 }

@@ -15,11 +15,11 @@ export const useFilter = ({
   selectedPriceRangeState,
   furnishedState,
   gymState,
-  selectedNumberOfBedroomsState
+  selectedNumberOfBedroomsState,
 }: TFilterProps) => {
   const router = useRouter();
   const [selectedRegion, setSelectedRegion] = useState<IOption | undefined>(
-    selectedRegionState
+    selectedRegionState,
   );
   const [selectedPriceRange, setSelectedPriceRange] = useState<
     IOption | undefined
@@ -27,7 +27,7 @@ export const useFilter = ({
   const [selectedNumberOfBedrooms, setSelectedSelectedNumberOfBedrooms] =
     useState<IOption | undefined>(selectedNumberOfBedroomsState);
   const [furnished, setFurnished] = useState<boolean>(
-    furnishedState ? furnishedState : false
+    furnishedState ? furnishedState : false,
   );
   const [gym, setGym] = useState<boolean>(gymState ? gymState : false);
 
@@ -63,6 +63,6 @@ export const useFilter = ({
     setGym,
     setSelectedSelectedNumberOfBedrooms,
     selectedNumberOfBedrooms,
-    handleSearch
+    handleSearch,
   };
 };

@@ -2,7 +2,7 @@ import { getLocation } from '@/services/locations';
 import { useSearchParams } from 'next/navigation';
 import {
   getBedroomOption,
-  getPriceRangeOption
+  getPriceRangeOption,
 } from '@/services/filterOptions';
 
 export function useInitialFilterOptions() {
@@ -34,6 +34,6 @@ export function useInitialFilterOptions() {
     selectedPriceRangeState: selectedPriceRangeOption,
     furnishedState: furnished === 'true' ? true : false,
     gymState: gym === 'true' ? true : false,
-    selectedNumberOfBedroomsState: selectedNumberOfBedroomsOption
+    selectedNumberOfBedroomsState: selectedNumberOfBedroomsOption,
   };
 }

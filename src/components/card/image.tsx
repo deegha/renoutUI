@@ -2,9 +2,9 @@ import { fetchImages } from '@/services/propertyService';
 import Image from 'next/image';
 
 export async function ImagesRenderer({ id }: { id: string }) {
-  const images: Array<{
+  const images: {
     url: string;
-  }> = await fetchImages(id);
+  }[] = await fetchImages(id);
   const imageSrc =
     images.length > 0
       ? images[0].url

@@ -3,6 +3,10 @@ import styles from './page.module.scss';
 import { Filters, UserLayout } from '@/components';
 
 export default async function Home() {
+  const x = 0;
+
+  x = 1;
+
   return (
     <main className={styles.main}>
       <UserLayout>

@@ -3,7 +3,7 @@ import { Inter, Montserrat } from 'next/font/google';
 import './globals.css';
 
 const inter = Montserrat({ subsets: ['latin'] });
-
+const z= 1
 export const metadata: Metadata = {
   title: {
     template: '%s | Rentouts',
@@ -17,6 +17,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  z =2
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>

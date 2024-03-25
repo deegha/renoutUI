@@ -10,17 +10,16 @@ export type TAmenities = {
 export type TInputs = {
   title: string;
   rentAmount: string;
-  numberOfBedrooms: number;
-  numberOfBathrooms: number;
+  numOfBedrooms: number;
+  numOfBathrooms: number;
   floorArea: number;
   description: string;
   advancePayment: string;
-  securityDeposit: number;
+  securityDeposit: string;
   productCategory: number;
   status: number;
   contactNumber: string;
   contactPerson: string;
-  locationId: number;
 };
 
 type TLocation = {
@@ -38,23 +37,23 @@ export function useInputs() {
   const [inputs, setInputs] = useState<TInputs>({
     title: "",
     rentAmount: "",
-    numberOfBedrooms: 0,
-    numberOfBathrooms: 0,
+    numOfBedrooms: 0,
+    numOfBathrooms: 0,
     floorArea: 0,
     description: "",
     advancePayment: "",
-    securityDeposit: 0,
+    securityDeposit: "",
     productCategory: 0,
     status: 0,
     contactNumber: "",
     contactPerson: "",
-    locationId: 0,
   });
 
   const [location, setLocation] = useState<TLocation>({} as TLocation);
 
   // handling input changes
   const handleInput = (name: string, value: string | number) => {
+    console.log(name, value);
     setInputs((prevInputs: TInputs) => ({
       ...prevInputs,
       [name]: value,
@@ -69,7 +68,6 @@ export function useInputs() {
     }));
   };
 
-  console.log(inputs, "inputs");
   return {
     inputs,
     handleInput,

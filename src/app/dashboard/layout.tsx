@@ -1,43 +1,48 @@
 "use client";
 
-import { getUser } from "@/services/authenticationService";
-import { useEffect, useState } from "react";
-import { User } from "@/services/d";
 import { DashBoardNav } from "@/components";
 import styles from "./styles.module.scss";
 import { useRouter } from "next/navigation";
+import { AuthProvider, useAuth } from "@/context/authContenxt";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function DashboardLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [user, setUser] = useState<User | undefined>();
-  const [loading, setLoading] = useState<boolean>(true);
-  const router = useRouter();
+  return (
+    <AuthProvider>
+      <DashBoard>{children}</DashBoard>
+    </AuthProvider>
+  );
+}
 
-  useEffect(() => {
-    setLoading(true);
-    getUser()
-      .then((user) => {
-        setUser(user);
-        setLoading(false);
-      })
-      .catch((e) => {
-        setUser(undefined);
-        console.log(e.message);
-        setLoading(false);
-      });
-  }, []);
+function DashBoard({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  const router = useRouter();
+  const { loading, user } = useAuth();
 
   if (loading) return <div>loading</div>;
 
-  if (!loading && user?.success === false) return router.push("/login");
+  if (!loading && user === null)
+    return (
+      <div>
+        You need to login First <a href="/login">Redirect to login</a>
+      </div>
+    );
 
   return (
-    <div className={styles.container}>
-      <DashBoardNav />
-      <div className={styles.dashboard}>{children}</div>
-    </div>
+    <>
+      <ToastContainer />
+      <div className={styles.container}>
+        <DashBoardNav />
+        <div className={styles.dashboard}>{children}</div>
+      </div>
+    </>
   );
 }

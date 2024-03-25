@@ -13,15 +13,14 @@ export async function register(user: RegisterProps) {
   return response.data;
 }
 
-export async function login(email: string, password: string) {
+export async function login(email: string, password: string){
   const response:LoginResponse  = await handleCall("login", "POST", {email, password}, "no-cache");
   return response;
 }
 
-export async function getUser() {
-  const response:User  = await handleCall("user", "GET", undefined, "no-cache");
+export async function getUser(): Promise<LoginResponse> {
+  return await handleCall("user", "GET", undefined, "no-cache");
 
-  return response;
 }
 
 export async function logout() {

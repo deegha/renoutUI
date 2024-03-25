@@ -8,16 +8,58 @@
   padding: 20px;
   background-color: #fff;
   gap: 20px;
-  
+
+ 
 }
 
+.filterClose {
+  display: none;
+  @media screen and (max-width: 767px){
+    display:block;
+  }
+
+}
 
 .container {
+  transition: all 0.9s;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
   background-color: #fff;
   gap: 20px;
-  
+  max-width: 800px;
+  flex-direction: column;
+  @media screen and (max-width: 767px){
+    flex-direction: column;
+    align-items: start;
+  }
 }
 
+.row {
+  display: flex;
+  gap: 10px;
+
+  @media screen and (max-width: 767px){
+    flex-direction: column;
+    
+  }
+}
+
+
+.mobileFilterClose {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #fff;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 800px;
+  flex-direction: column;
+  @media screen and (max-width: 767px){
+    display: none;
+    flex-direction: column;
+    align-items: start;
+  }
+}

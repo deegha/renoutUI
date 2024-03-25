@@ -6,6 +6,8 @@ export const sectionOneItems = [
       "Add something that catches viewers eye. May be mentioned the number of bedroom. this will be first thing they see",
     placeHolder: "Enter title",
     type: "text",
+    required: true,
+    inputType: "text"
   },
   {
     name: "contactNumber",
@@ -14,7 +16,8 @@ export const sectionOneItems = [
       "",
     placeHolder: "Eg : 0771234567",
     type: "text",
-   
+    required: true,
+    inputType: "text"
   },
   {
     name: "contactPerson",
@@ -23,6 +26,8 @@ export const sectionOneItems = [
       "",
     placeHolder: "Eg : Jhone Doe",
     type: "text",
+    required: true,
+    inputType: "text"
   },
   {
     name: "rentAmount",
@@ -31,7 +36,8 @@ export const sectionOneItems = [
       "Add your expected rent amount. You can set how often rent has to be paid in next option.",
     placeHolder: "Enter expected monthly rent",
     type: "number",
-    inputType: "currency"
+    inputType: "currency",
+    required: true
   },
   {
     name: "advancePayment",
@@ -40,16 +46,18 @@ export const sectionOneItems = [
       "This is the fee that the tenant has to pay for blocking the property. This is usually arround 25,000LKR",
     placeHolder: "Eg : 25,000 LKR",
     type: "number",
-    inputType: "currency"
+    inputType: "currency",
+    required: false
   },
   {
-    name: "securityDeposite",
-    title: "Security Deposite",
+    name: "securityDeposit",
+    title: "Security Deposit",
     helper:
       "This is the fee that the tenant has to pay before moving in. This is usually 1 month rent. But you can set your own value",
     placeHolder: "Eg : 100,000 LKR",
     type: "number",
-    inputType: "currency"
+    inputType: "currency",
+    required: false
   },
 ];
 
@@ -61,7 +69,8 @@ export const sectionTwoItems = [
       "How many bedroom do you have in your apartment. This should not include maid rooms. And all the rooms should be inside the hosuse",
     placeHolder: "eg: 3",
     type: "number",
-    inputType: "number"
+    inputType: "number",
+    required: true
   },
   {
     name: "numOfBathrooms",
@@ -70,7 +79,8 @@ export const sectionTwoItems = [
       "How many bathrooms do you have in your apartment. This should not include maid bathroom. ",
     placeHolder: "eg: 3",
     type: "number",
-    inputType: "number"
+    inputType: "number",
+    required: true
   },
   {
     name: "floorArea",
@@ -78,6 +88,7 @@ export const sectionTwoItems = [
     helper: "How many squrefeet does you property have",
     placeHolder: "eg: 1200",
     type: "number",
-    inputType: "number"
+    inputType: "number",
+    required: false
   },
 ];

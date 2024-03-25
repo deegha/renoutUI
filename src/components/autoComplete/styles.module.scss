@@ -25,6 +25,10 @@
 
   list-style: none;
   padding: 0;
+
+  z-index: 2;
+  max-height: 400px;
+  overflow-y: scroll;
 }
 
 .item {

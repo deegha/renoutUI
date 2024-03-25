@@ -16,7 +16,7 @@ export default async function Home({ searchParams }: IProps) {
       <UserLayout>
         <div className={styles.filterContainer}>
           <h1>Let&apos;s find your Apartment</h1>
-          <Filters />
+          <Filters alwayOpen />
         </div>
       </UserLayout>
     </main>

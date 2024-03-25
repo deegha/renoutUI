@@ -8,6 +8,12 @@
   justify-content: space-between;
   min-height: 100vh;
   position: fixed;
+
+  @media only screen and (max-width: 800px) {
+    display: none;
+    position: absolute;
+    z-index: 1;
+   }
   
   a {
     text-decoration: none;
@@ -51,15 +57,17 @@
       }
     }
   }
+}
 
-  .logoutBtn {
-    cursor: pointer;
-    color: #bdc3c7;
 
-    &:hover {
-      color: #e66767;
-      
-    }
+
+.logoutBtn {
+  cursor: pointer;
+  color: #bdc3c7;
+
+  &:hover {
+    color: #e66767;
+    
   }
 }
 
@@ -68,4 +76,88 @@
   cursor: pointer;
   text-decoration: none;
   color: #1a6ec1;
+}
+
+.containerMain {
+ 
+  @media only screen and (max-width: 800px) {
+    padding: 10px;
+    width: 100%;
+   }
+}
+
+.mobileMenu {
+  display: none;
+  
+  @media only screen and (max-width: 800px) {
+    display: block;
+    position: relative;
+    right: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+   }
+}
+
+.mobileContainer {
+  
+  a {
+    text-decoration: none;
+    color: #bdc3c7;
+  }
+
+  background-color: #574b90;
+  
+  padding: 40px 40px;
+
+  .containerInner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    color: #bdc3c7;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+
+    a {
+      text-decoration: none;
+      color: #bdc3c7;
+    }
+
+    li {
+      list-style: none;
+      cursor: pointer;
+      color: #bdc3c7;
+
+      &:hover {
+        transition: 0.3s;
+        color: #8395a7;
+      }
+    }
+  }
+
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+  min-height: 100vh;
+  
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 2;
+
+
+  display: flex;
 }

@@ -26,6 +26,8 @@ export type TFilter = {
   maxRent?: string;
   minRent?: string;
   page?: string;
+  region?: string;
+  gym?:  number | string;
 };
 
 export type TMethod = "GET" | "POST" | "PUT";
@@ -58,22 +60,19 @@ export interface RegisterResponse {
   success: boolean;
 }
 
-export interface User {
-  data: {
-    id: number;
-    name: string;
-    email: string;
-    userType: number;
-    createdAt: string;
-    updatedAt: string;
-  } | null;
-  message: string;
-  success: boolean;
+export interface User  {
+  id: number;
+  name: string;
+  email: string;
+  userType: number;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface LoginResponse {
   message: string;
   success: boolean;
+  data: User
 }
 
 export interface FetchProductsResponse {
@@ -86,8 +85,8 @@ export interface FetchProductsResponse {
 export interface ICreateProperty {
   title: string;
   rentAmount: number;
-  numberOfBedrooms: number;
-  numberOfBathrooms: number;
+  numOfBedrooms: number;
+  numOfBathrooms: number;
   floorArea: number;
   description: string;
   images: IImage[];
@@ -104,6 +103,7 @@ export interface ICreateProperty {
   contactNumber: string;
   contactPerson: string;
   locationId: number;
+  createdBy: number;
 }
 
 export type IImage = {

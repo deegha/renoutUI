@@ -27,15 +27,25 @@ export const ImageUpload = memo(function ImageUpload({
   const [isDragging, setIsDragging] = useState(false);
 
   const isValidImageType = (file: File): boolean => {
-    const allowedTypes = ["image/jpeg", "image/png", "image/gif"];
+    const allowedTypes = ["image/jpeg", "image/png"];
     return allowedTypes.includes(file.type);
   };
+
+  const MAX_FILE_SIZE = 5242880; // 5 MB in bytes
 
   const addImage = (files: FileList) => {
     try {
       const parsedFiles = Object.keys(files).map((key) => {
         const currentFile = files[parseInt(key)];
         if (isValidImageType(currentFile)) {
+          if (currentFile.size > MAX_FILE_SIZE) {
+            createNotification({
+              type: "error",
+              message: `The file ${currentFile.name} is too large.`,
+            });
+
+            throw new Error("File too large to handle");
+          }
           return {
             url: URL.createObjectURL(currentFile),
             file: currentFile,

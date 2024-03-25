@@ -49,6 +49,7 @@ export default async function Property({ params }: TProps) {
               )}
               <p>Furnished: {property.furnishedStatus ? "Yes" : "No"}</p>
               <p>Pool: {property.pool ? "Yes" : "No"}</p>
+              <p>Gym: {property.gym ? "Yes" : "No"}</p>
               <p>Number of bedrooms: {property.numOfBedrooms}</p>
               <p>Number of bathrooms: {property.numOfBathrooms}</p>
               <p>Area: {property.floorArea} sqft</p>

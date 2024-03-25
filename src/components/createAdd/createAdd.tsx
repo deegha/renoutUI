@@ -9,7 +9,7 @@ import { sectionOneItems, sectionTwoItems } from "./staticContent";
 import { useCreateForm } from "./hooks/useCreateForm";
 import { useEditor } from "./hooks/useEditor";
 import { useFormImages } from "./hooks/useFormImages";
-import { useInputs } from "./hooks/useInputs";
+import { TInputs, useInputs } from "./hooks/useInputs";
 import { InputBlock } from "./inputBlocks";
 import { locations } from "@/services/locations";
 import { IOption } from "../autoComplete/autoComplete";
@@ -27,7 +27,6 @@ export const CreateAddUI = () => {
     location,
   } = useInputs();
   const { editorState, onEditorStateChange } = useEditor();
-
   const { handleCreateProperty, loading } = useCreateForm();
 
   function handleSubmit() {
@@ -39,6 +38,17 @@ export const CreateAddUI = () => {
       location?.id as number
     );
   }
+
+  const isFormNotReady =
+    inputs.title === "" ||
+    inputs.rentAmount === "0" ||
+    inputs.rentAmount === "" ||
+    inputs.contactNumber === "" ||
+    inputs.contactPerson === "" ||
+    inputs.numOfBathrooms === 0 ||
+    images.length === 0;
+
+  console.log(isFormNotReady, "isFormReady");
 
   return (
     <div className={styles.container} data-testid={"create-add"}>
@@ -61,7 +71,7 @@ export const CreateAddUI = () => {
       />
       {sectionOneItems.map((item) => (
         <InputBlock
-          value={inputs[item.name]}
+          value={inputs[item.name as keyof TInputs]}
           key={item.name}
           title={item.title}
           helper={item.helper}
@@ -70,6 +80,7 @@ export const CreateAddUI = () => {
           type={item.type as "text" | "number"}
           handler={handleInput}
           inputType={item.inputType as TType}
+          required={item.required}
         />
       ))}
       <div className={styles.amenities}>
@@ -87,6 +98,7 @@ export const CreateAddUI = () => {
       </div>
       {sectionTwoItems.map((item) => (
         <InputBlock
+          required={item.required}
           type={item.type as "text" | "number"}
           key={item.name}
           title={item.title}
@@ -119,6 +131,7 @@ export const CreateAddUI = () => {
           variant="primary"
           title="Create"
           onClick={handleSubmit}
+          disabled={isFormNotReady}
         />
       </div>
     </div>

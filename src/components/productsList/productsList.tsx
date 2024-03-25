@@ -30,6 +30,8 @@ export async function ProductsList({
       maxRent: rentAmount || "",
       beds: bedrooms || "",
       furnished: furnished ? 1 : "",
+      region: region,
+      gym: gym,
     });
   } catch (error) {
     productResponse = {
@@ -51,7 +53,6 @@ export async function ProductsList({
     <section className={styles.listContainer}>
       <Filters />
       {productResponse.products.map((product) => {
-        console.log(product, "product");
         const perks: Array<string> = [];
         perks.push(
           product.numOfBedrooms + " Bedrooms",
@@ -62,6 +63,7 @@ export async function ProductsList({
         );
         return (
           <Card
+            advanceAmount={product.advancePayment}
             id={product.id}
             key={product.id}
             title={product.title}

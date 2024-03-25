@@ -4,35 +4,30 @@ import { getUser } from "@/services/authenticationService";
 import { useEffect, useState } from "react";
 import { User } from "@/services/d";
 import { useRouter } from "next/navigation";
+import { AuthProvider, useAuth } from "@/context/authContenxt";
 
-export default function DashboardLayout({
+export default function LoginLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [user, setUser] = useState<User | undefined>();
-  const [loading, setLoading] = useState<boolean>(true);
+  return (
+    <AuthProvider>
+      <LoginRender>{children}</LoginRender>
+    </AuthProvider>
+  );
+}
+
+function LoginRender({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   const router = useRouter();
-
-  useEffect(() => {
-    setLoading(true);
-    getUser()
-      .then((user) => {
-        setUser(user);
-        setLoading(false);
-      })
-      .catch((e) => {
-        setUser(undefined);
-        console.log(e.message);
-        setLoading(false);
-      });
-  }, []);
-
+  const { loading, user } = useAuth();
   if (loading) return <div>loading</div>;
 
-  if (user?.success) {
-    router.push("/dashboard");
-  }
+  if (user) router.push("/dashboard");
 
-  return <div>{children}</div>;
+  return <>{children}</>;
 }

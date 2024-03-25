@@ -20,6 +20,7 @@ interface IInput {
   };
   error?: string;
   testId?: string;
+  loading?: boolean;
 }
 
 const typeMap = {
@@ -42,6 +43,7 @@ export function InputText({
   placeholder,
   error,
   testId,
+  loading,
 }: IInput) {
   function handleOnChange(e: React.ChangeEvent<HTMLInputElement>) {
     let newValue: string | number = e.target.value;
@@ -105,6 +107,7 @@ export function InputText({
       </div>
       <div className={styles.container}>
         <input
+          readOnly={loading}
           data-testid={`${testId}-input-${name}`}
           value={value}
           onChange={handleOnChange}

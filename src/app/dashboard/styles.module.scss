@@ -5,6 +5,11 @@
   align-items: flex-start;
   gap: 20px;
   
+
+  @media only screen and (max-width: 800px) {
+    flex-direction: column;  
+    gap: 0;
+   }
 }
 
 .innerContainer {
@@ -56,5 +61,10 @@
 .dashboard {
   height: 100hv;
   position: relative;
-  left: 200px;
+  left: 170px;
+
+  @media only screen and (max-width: 800px) {
+    left: 0;
+    padding: 20px;
+   }
 }

@@ -8,6 +8,7 @@ type ButtonProps = {
   onClick: (e: React.SyntheticEvent) => void;
   loading?: boolean;
   testId?: string;
+  disabled?: boolean;
 };
 
 export const Button: React.FC<ButtonProps> = ({
@@ -17,6 +18,7 @@ export const Button: React.FC<ButtonProps> = ({
   onClick,
   loading,
   testId,
+  disabled,
 }) => {
   let className = "primary";
 
@@ -33,7 +35,7 @@ export const Button: React.FC<ButtonProps> = ({
       data-testid={testId}
       className={styles[className]}
       onClick={onClick}
-      disabled={loading}
+      disabled={loading || disabled}
     >
       {icon && <span className="icon">{icon}</span>}
       {title}

@@ -43,7 +43,7 @@ export const fetchImages = async (id: string): Promise<Array<IImage>> => {
 }
 
 export const fetchProperty = async (id: string):Promise<TProduct> => {
-  const response = await handleCall(`products/${id}`, "GET");
+  const response = await handleCall(`products/${id}`, "GET",undefined, "no-cache");
   
   return response.data;
 }

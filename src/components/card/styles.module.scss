@@ -54,6 +54,14 @@
       gap: 10px;
       font-size: 12px;
       color:#d1ccc0;
+      flex-wrap: wrap;
     }
   }
+
+  @media screen and (max-width: 767px){
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
 }
+

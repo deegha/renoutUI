@@ -3,11 +3,12 @@
 import React, { useContext, useState, useEffect } from "react";
 import { login as loginAction } from "@/services/authenticationService";
 import { User } from "@/services/d";
+import { getUser } from "@/services/authenticationService";
 
 interface IAuthContext {
   authenticated: boolean | "loading";
   loading: boolean;
-  user: unknown;
+  user: User | null;
   logout: () => void;
   login: (email: string, password: string) => void;
 }
@@ -18,7 +19,7 @@ interface IProps {
 
 const authContextDefaultValues: IAuthContext = {
   authenticated: false,
-  user: {},
+  user: null,
   loading: false,
   logout: () => {
     return false;
@@ -41,6 +42,20 @@ export const AuthProvider: React.FC<IProps> = ({ children }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [user, setUser] = useState<User | null>(null);
 
+  useEffect(() => {
+    setLoading(true);
+    getUser()
+      .then((response) => {
+        setUser(response.data);
+        setLoading(false);
+      })
+      .catch((e) => {
+        setUser(null);
+        console.log(e.message);
+        setLoading(false);
+      });
+  }, []);
+
   const logout = () => {
     setAuthenticated(false);
   };
@@ -55,6 +70,7 @@ export const AuthProvider: React.FC<IProps> = ({ children }) => {
       return;
     }
     setAuthenticated(true);
+    setAuthUser(response.data);
     setLoading(false);
   };
 

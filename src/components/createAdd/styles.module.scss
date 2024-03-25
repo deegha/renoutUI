@@ -11,6 +11,9 @@
     margin-bottom: 50px;;
   }
 
+  @media only screen and (max-width: 800px) {
+    padding: 0;
+   }
 }
 
 .amenities {
@@ -41,3 +44,4 @@
 .imageUploadArea {
   max-width: 800px;
 }
+

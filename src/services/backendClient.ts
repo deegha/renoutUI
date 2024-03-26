@@ -22,7 +22,7 @@ export const handleCall = async (
       body: JSON.stringify(bodyObejct),
     };
   }
-  const url = `http://${process.env.NEXT_PUBLIC_BACKEND_URL}/${endpoint}`;
+  const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/${endpoint}`;
   console.log(url, 'url');
   const response = await fetch(url, options);
 

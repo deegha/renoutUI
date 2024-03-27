@@ -23,7 +23,7 @@ export async function login(email: string, password: string) {
 }
 
 export async function getUser(): Promise<LoginResponse> {
-  return await handleCall('user', 'GET', undefined, 'no-cache');
+  return await handleCall('user', 'GET', undefined, 'no-cache', true);
 }
 
 export async function logout() {

@@ -72,6 +72,15 @@ export const AuthProvider: React.FC<IProps> = ({ children }) => {
     }
     setAuthenticated(true);
     setAuthUser(response.data);
+    console.log(window, 'window');
+    if (typeof window !== 'undefined') {
+      console.log('settgin token in local storage.');
+      localStorage.setItem('token', response.token);
+      console.log('token is set');
+    } else {
+      console.log('Could not set token in local storage.');
+    }
+
     setLoading(false);
   };
 

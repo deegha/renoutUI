@@ -6,7 +6,14 @@ export const handleCall = async (
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   bodyObejct?: Record<string, any>,
   caches?: RequestCache,
+  gurd?: boolean,
 ) => {
+  let token = null;
+
+  if (typeof window !== 'undefined') {
+    token = localStorage.getItem('token');
+  }
+
   let options: TOptions = {
     headers: {
       'Content-Type': 'application/json',
@@ -15,6 +22,16 @@ export const handleCall = async (
     credentials: 'include',
     cache: caches || 'default',
   };
+
+  if (gurd) {
+    options = {
+      ...options,
+      headers: {
+        ...options.headers,
+        Authorization: `Bearer ${token}`,
+      },
+    };
+  }
 
   if (bodyObejct) {
     options = {

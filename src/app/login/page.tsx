@@ -17,12 +17,16 @@ const Login = () => {
     e.preventDefault();
     setStatus('Login in...');
     const response = await login(email, password);
-    console.log(response, 'response');
+
     if (!response.success) {
       setStatus('');
       setError(response.message);
       clearError();
       return;
+    }
+
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('token', response.token);
     }
 
     setStatus('Redirecting...');

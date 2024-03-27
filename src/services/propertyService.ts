@@ -8,7 +8,7 @@ import {
 import { handleCall } from './backendClient';
 
 export const createProperty = (data: ICreateProperty) =>
-  handleCall('products', 'POST', data);
+  handleCall('products', 'POST', data, undefined, true);
 
 export const fetchProperties = async (
   filters: TFilter,

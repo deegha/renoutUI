@@ -69,6 +69,7 @@ export interface User {
 
 export interface LoginResponse {
   message: string;
+  token: string;
   success: boolean;
   data: User;
 }

@@ -34,6 +34,7 @@ export async function ProductsList({
       gym,
     });
   } catch (error) {
+    console.log(error, 'error');
     productResponse = {
       products: [],
       numberOfPages: 0,

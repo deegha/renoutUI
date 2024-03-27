@@ -31,6 +31,10 @@
       outline: none;
       font-size: 12px;
 
+      @media screen and (max-width: 767px) {
+        font-size: 17px;
+
+      }
       svg {
         cursor: pointer;
       }

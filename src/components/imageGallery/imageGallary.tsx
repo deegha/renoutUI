@@ -5,6 +5,8 @@ import styles from './styles.module.scss';
 import { Button } from '@/components';
 import { useState } from 'react';
 import { ShowAllImages } from './allIImages';
+import { getPartAfterUpload } from '@/services/helpers';
+import Image from 'next/image';
 
 export function ImageGallery({ images }: { images: IImage[] }) {
   const [showImages, setShowImages] = useState(false);
@@ -22,10 +24,12 @@ export function ImageGallery({ images }: { images: IImage[] }) {
     <div className={styles.gallery}>
       {imagesToRender.map((image, index) => (
         // eslint-disable-next-line @next/next/no-img-element
-        <img
+        <Image
           key={index}
+          height={390}
+          width={390}
           className={styles.galleryItem}
-          src={image.src}
+          src={`https://res.cloudinary.com/duqpgdc9v/image/upload/w_390,ar_1.3,c_fill${getPartAfterUpload(image.src)}`}
           alt={image.alt}
         />
       ))}

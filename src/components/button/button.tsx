@@ -21,6 +21,7 @@ export const Button: React.FC<ButtonProps> = ({
   testId,
   disabled,
 }) => {
+
   let className = 'primary';
 
   if (variant === 'primary') {
@@ -40,6 +41,7 @@ export const Button: React.FC<ButtonProps> = ({
     >
       {icon && <span className="icon">{icon}</span>}
       {title}
+
     </button>
   );
 };

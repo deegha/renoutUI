@@ -34,7 +34,7 @@ export async function ProductsList({
       gym,
     });
   } catch (error) {
-    console.log(error, 'error');
+    console.log(error);
     productResponse = {
       products: [],
       numberOfPages: 0,
@@ -49,31 +49,34 @@ export async function ProductsList({
       </div>
     );
   }
+  if (!productResponse) return <div>Loading...</div>;
 
   return (
     <section className={styles.listContainer}>
       <Filters />
-      {productResponse.products.map((product) => {
-        const perks: string[] = [];
-        perks.push(
-          product.numOfBedrooms + ' Bedrooms',
-          product.numOfBathrooms + ' Bathrooms',
-          product.furnishedStatus ? 'Furnished' : 'Not Furnished',
-          product.gym ? 'Gym' : '',
-          product.pool ? 'Pool' : '',
-        );
-        return (
-          <Card
-            advanceAmount={product.advancePayment}
-            id={product.id}
-            key={product.id}
-            title={product.title}
-            items={perks}
-            rentAmount={product.rentAmount}
-            securityDeposit={product.securityDeposit}
-          />
-        );
-      })}
+      {productResponse
+        ? productResponse.products.map((product) => {
+            const perks: string[] = [];
+            perks.push(
+              product.numOfBedrooms + ' Bedrooms',
+              product.numOfBathrooms + ' Bathrooms',
+              product.furnishedStatus ? 'Furnished' : 'Not Furnished',
+              product.gym ? 'Gym' : '',
+              product.pool ? 'Pool' : '',
+            );
+            return (
+              <Card
+                advanceAmount={product.advancePayment}
+                id={product.id}
+                key={product.id}
+                title={product.title}
+                items={perks}
+                rentAmount={product.rentAmount}
+                securityDeposit={product.securityDeposit}
+              />
+            );
+          })
+        : null}
       {productResponse.numberOfPages > 1 && (
         <Pagination
           totalPages={productResponse.numberOfPages}

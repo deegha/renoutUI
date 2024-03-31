@@ -1,8 +1,9 @@
 import { fetchImages, fetchProperty } from '@/services/propertyService';
-import { Navbar, ImageGallery } from '@/components';
+import { Navbar } from '@/components';
 import styles from './styles.module.scss';
 import { getLocation } from '@/services/locations';
 import { Suspense } from 'react';
+import { RenderImages } from './renderImages';
 
 type TProps = {
   params: { id: string };
@@ -24,7 +25,6 @@ export async function generateMetadata({ params }: TProps) {
 
 export default async function Property({ params }: TProps) {
   const property = await fetchProperty(params.id);
-  const images = await fetchImages(params.id);
 
   return (
     <main className={styles.container}>
@@ -35,7 +35,9 @@ export default async function Property({ params }: TProps) {
             <h1 className={styles.propertyTitle}>{property.title}</h1>
           </section>
           <section>
-            <ImageGallery images={images} />
+            <Suspense fallback="loading">
+              <RenderImages id={params.id} />
+            </Suspense>
           </section>
           <section className={styles.detailSectionContainer}>
             <div className={styles.detailsLeft}>

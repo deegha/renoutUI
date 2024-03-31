@@ -7,19 +7,19 @@ import { AuthProvider, useAuth } from '@/context/authContenxt';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function DashboardLayout({
+export default function MyAdsLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <AuthProvider>
-      <DashBoard>{children}</DashBoard>
+      <MyAds>{children}</MyAds>
     </AuthProvider>
   );
 }
 
-function DashBoard({
+function MyAds({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -40,7 +40,7 @@ function DashBoard({
       <ToastContainer />
       <div className={styles.container}>
         <DashBoardNav />
-        <div className={styles.dashboard}>{children}</div>
+        <div className={styles.myads}>{children}</div>
       </div>
     </>
   );

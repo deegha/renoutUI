@@ -62,3 +62,19 @@
     padding: 20px;
   }
 }
+
+
+.loginRedirect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+  min-height: 100vh;
+  
+  a {
+    color: #4834d4;
+    text-decoration: none;
+  }
+}

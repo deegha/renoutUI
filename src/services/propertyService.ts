@@ -62,3 +62,17 @@ export const fetchProperty = async (id: string): Promise<TProduct> => {
 
   return response.data;
 };
+
+export const fetchUserProperties = async (): Promise<FetchProductsResponse> => {
+  const response = await handleCall(
+    'products/user',
+    'GET',
+    undefined,
+    'no-cache',
+    true,
+  );
+  return {
+    products: response.data.List as TProduct[],
+    numberOfPages: response.data.TotalPages,
+  };
+};

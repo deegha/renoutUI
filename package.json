@@ -35,7 +35,7 @@
     "fetch": "^1.1.0",
     "framer-motion": "^11.0.3",
     "lint-staged": "^15.2.2",
-    "next": "14.1.0",
+    "next": "14.2.0",
     "next-gallery": "^2.1.0",
     "prettier-plugin-tailwindcss": "^0.5.12",
     "react": "^18",

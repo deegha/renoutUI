@@ -10,7 +10,6 @@
   // justify-content: space-between;
   // gap: 10px;
 
-
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 100%;
@@ -28,26 +27,25 @@
   // }
 
   img {
-    &:first-child{
+    &:first-child {
       border-radius: 10px 0 0 0;
     }
 
-    &:nth-child(2){
+    &:nth-child(2) {
       border-radius: 0 10px 0 0;
     }
 
-    &:nth-child(3){
+    &:nth-child(3) {
       border-radius: 0 0 0 10px;
     }
 
-    &:nth-child(4){
-      border-radius: 0 0  10px 0;
+    &:nth-child(4) {
+      border-radius: 0 0 10px 0;
     }
   }
 
-
   @media screen and (max-width: 330px) {
-    border-radius: 0 0  0 0;
+    border-radius: 0 0 0 0;
   }
 }
 

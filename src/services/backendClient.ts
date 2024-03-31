@@ -14,6 +14,8 @@ export const handleCall = async (
     token = localStorage.getItem('token');
   }
 
+  console.log(token, 'token');
+
   let options: TOptions = {
     headers: {
       'Content-Type': 'application/json',

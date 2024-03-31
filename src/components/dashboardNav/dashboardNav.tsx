@@ -1,24 +1,34 @@
 'use client';
 
-import { logout } from '@/services/authenticationService';
-
 import styles from './styles.module.scss';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { faBars, faPowerOff } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const links = [
   {
     url: '/dashboard',
     name: 'Create Adds',
   },
+  {
+    url: '/myads',
+    name: 'My ads',
+  },
 ];
 
 export function DashBoardNav() {
   const pathname = usePathname();
   const [showMenu, setShowMenu] = useState(false);
+
+  const router = useRouter();
+
+  function logout() {
+    window.localStorage.removeItem('token');
+    router.push('/login');
+  }
 
   return (
     <div className={styles.containerMain}>
